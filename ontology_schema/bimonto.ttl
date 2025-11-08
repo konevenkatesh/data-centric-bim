@@ -1,0 +1,191 @@
+@prefix : <http://w3id.org/IproK/00/BIMOnto#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/IproK/00/BIMOnto> a owl:Ontology .
+
+:AssignToProcess a owl:ObjectProperty ;
+    rdfs:domain :Product ;
+    rdfs:range :Process .
+
+:Beam a owl:Class ;
+    rdfs:subClassOf :BuildingElement .
+
+:BuildingElementProxy a owl:Class ;
+    rdfs:subClassOf :BuildingElement .
+
+:Column a owl:Class ;
+    rdfs:subClassOf :BuildingElement .
+
+:ContainsElements a owl:ObjectProperty ;
+    rdfs:domain :SpatialStructureElement ;
+    rdfs:range :Element .
+
+:CrossSectionArea a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Element ;
+    rdfs:range xsd:decimal .
+
+:Description a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:range xsd:string .
+
+:Door a owl:Class ;
+    rdfs:subClassOf :BuildingElement .
+
+:Event a owl:Class ;
+    rdfs:subClassOf :Process .
+
+:GlobalId a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:range xsd:string .
+
+:GrossVolume a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Element ;
+    rdfs:range xsd:decimal .
+
+:Height a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Element ;
+    rdfs:range xsd:decimal .
+
+:Length a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Element ;
+    rdfs:range xsd:decimal .
+
+:Member a owl:Class ;
+    rdfs:subClassOf :BuildingElement .
+
+:Name a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:range xsd:string .
+
+:NetAreaGrossArea a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Element ;
+    rdfs:range xsd:decimal .
+
+:NetSideArea a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Element ;
+    rdfs:range xsd:decimal .
+
+:NetVolume a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Element ;
+    rdfs:range xsd:decimal .
+
+:NumberOfRiser a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Element ;
+    rdfs:range xsd:integer .
+
+:OuterSurfaceArea a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Element ;
+    rdfs:range xsd:decimal .
+
+:Perimeter a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Element ;
+    rdfs:range xsd:decimal .
+
+:Railing a owl:Class ;
+    rdfs:subClassOf :BuildingElement .
+
+:RiserHeight a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Element ;
+    rdfs:range xsd:decimal .
+
+:Slab a owl:Class ;
+    rdfs:subClassOf :BuildingElement .
+
+:Space a owl:Class ;
+    rdfs:subClassOf :SpatialStructureElement .
+
+:Span a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Element ;
+    rdfs:range xsd:decimal .
+
+:Stair a owl:Class ;
+    rdfs:subClassOf :BuildingElement .
+
+:StairFlight a owl:Class ;
+    rdfs:subClassOf :BuildingElement .
+
+:Task a owl:Class ;
+    rdfs:subClassOf :Process .
+
+:TreadLength a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Element ;
+    rdfs:range xsd:decimal .
+
+:Wall a owl:Class ;
+    rdfs:subClassOf :BuildingElement .
+
+:Width a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Element ;
+    rdfs:range xsd:decimal .
+
+:Window a owl:Class ;
+    rdfs:subClassOf :BuildingElement .
+
+:hasBuilding a owl:ObjectProperty ;
+    rdfs:domain :Site ;
+    rdfs:range :Building .
+
+:hasBuildingStorey a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain :Building ;
+    rdfs:range :BuildingStorey .
+
+:hasPredefinedType a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain :Product ;
+    rdfs:range :PredefinedType .
+
+:hasSite a owl:ObjectProperty ;
+    rdfs:domain :Project ;
+    rdfs:range :Site .
+
+:owlId a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:range xsd:string .
+
+:BuildingStorey a owl:Class ;
+    rdfs:subClassOf :SpatialStructureElement .
+
+:PredefinedType a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Project a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Building a owl:Class ;
+    rdfs:subClassOf :SpatialStructureElement .
+
+:Site a owl:Class ;
+    rdfs:subClassOf :SpatialStructureElement .
+
+:Process a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Product a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:SpatialStructureElement a owl:Class ;
+    rdfs:subClassOf :Product .
+
+:BuildingElement a owl:Class ;
+    rdfs:subClassOf :Element .
+
+:Element a owl:Class ;
+    rdfs:subClassOf :Product .
+

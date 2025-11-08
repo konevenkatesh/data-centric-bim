@@ -1,0 +1,291 @@
+@prefix : <http://w3id.org/00/IproK#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/00/IproK> a owl:Ontology .
+
+:ActualCost a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :CostItem ;
+    rdfs:range xsd:decimal .
+
+:ActualDuration a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+:ActualFinish a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+:ActualStart a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+:ActualUnits a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range xsd:decimal .
+
+:AssignToProduct a owl:ObjectProperty ;
+    rdfs:domain :Task ;
+    rdfs:range :Product .
+
+:AssignsToActor a owl:ObjectProperty ;
+    rdfs:domain :Project ;
+    rdfs:range :Actor .
+
+:AtCompleteCost a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :CostItem ;
+    rdfs:range xsd:decimal .
+
+:AtCompleteDuration a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+:AtCompleteUnits a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range xsd:decimal .
+
+:BaseRate_onDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :ResourceType ;
+    rdfs:range xsd:decimal .
+
+:BudgetedCost a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :CostItem ;
+    rdfs:range xsd:decimal .
+
+:BudgetedUnits a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range xsd:decimal .
+
+:ConstructionEquipmentResource a owl:Class ;
+    rdfs:subClassOf :ConstructionResource .
+
+:ConstructionMaterialResource a owl:Class ;
+    rdfs:subClassOf :ConstructionResource .
+
+:Description a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:string .
+
+:EquipmenntCost a owl:Class ;
+    rdfs:subClassOf :CostType .
+
+:ExpenceItem a owl:Class ;
+    rdfs:subClassOf :CostType .
+
+:GlobalId a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:string .
+
+:IsMilestone a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:boolean .
+
+:IsPrimaryResource a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range xsd:boolean .
+
+:LaborCost a owl:Class ;
+    rdfs:subClassOf :CostType .
+
+:LaborResource a owl:Class ;
+    rdfs:subClassOf :ConstructionResource .
+
+:LagTime a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:decimal .
+
+:MaterialCost a owl:Class ;
+    rdfs:subClassOf :CostType .
+
+:MaxUnits_per_day a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :ResourceType ;
+    rdfs:range xsd:decimal .
+
+:Name a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:string .
+
+:OwlId a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:string .
+
+:PerCentCompletion a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:decimal .
+
+:Priority a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:integer .
+
+:ProjectAddress a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Project ;
+    rdfs:range xsd:string .
+
+:ProjectPhase a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Project ;
+    rdfs:range xsd:string .
+
+:RemainingCost a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :CostItem ;
+    rdfs:range xsd:decimal .
+
+:RemainingDuration a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+:RemainingUnits a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range xsd:decimal .
+
+:ResourceInstructions a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+:ResourceStatus a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:ScheduleDuration a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+:ScheduleFinish a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+:ScheduleStart a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+:UserDefinedResource a owl:Class ;
+    rdfs:subClassOf :ConstructionResource .
+
+:WorkMethod a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+:hasCostItem a owl:ObjectProperty ;
+    rdfs:domain :Project ;
+    rdfs:range :CostItem .
+
+:hasCostType a owl:ObjectProperty ;
+    rdfs:domain :CostItem ;
+    rdfs:range :CostType .
+
+:hasPredecessor a owl:ObjectProperty ;
+    rdfs:domain :Task ;
+    rdfs:range :Task .
+
+:hasResourceType a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range :ResourceType .
+
+:hasSubTask a owl:ObjectProperty ;
+    rdfs:domain :Task ;
+    rdfs:range :Task .
+
+:hasSubWBS a owl:ObjectProperty ;
+    rdfs:domain :WBS ;
+    rdfs:range :WBS .
+
+:hasSuccessor a owl:ObjectProperty ;
+    rdfs:domain :Task ;
+    rdfs:range :Task .
+
+:hasTask a owl:ObjectProperty ;
+    rdfs:domain :WBS ;
+    rdfs:range :Task .
+
+:hasTrackingTag a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range :TrackingTag .
+
+:hasWBS a owl:ObjectProperty ;
+    rdfs:domain :WorkPackage ;
+    rdfs:range :WBS .
+
+:hasWorkPackage a owl:ObjectProperty ;
+    rdfs:domain :Project ;
+    rdfs:range :WorkPackage .
+
+:hasWorkStatus a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain :Project ;
+    rdfs:range :WorkStatus .
+
+:requiresResource a owl:ObjectProperty ;
+    rdfs:domain :Project ;
+    rdfs:range :Resource .
+
+:Actor a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Product a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:TrackingTag a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:WorkStatus a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:WorkPackage a owl:Class ;
+    rdfs:subClassOf :Project .
+
+:ConstructionResource a owl:Class ;
+    rdfs:subClassOf :ResourceType .
+
+:ResourceType a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:CostType a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:WBS a owl:Class ;
+    rdfs:subClassOf :WorkPackage .
+
+:CostItem a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Project a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Resource a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Task a owl:Class ;
+    rdfs:subClassOf :WBS .
+

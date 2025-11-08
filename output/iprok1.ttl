@@ -1,0 +1,6573 @@
+@prefix : <http://w3id.org/IproK#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/IproK> a owl:Ontology .
+
+:ActualCost a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :CostItem ;
+    rdfs:range xsd:decimal .
+
+:ActualDuration a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Project,
+        :Resource,
+        :TaskTime,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range xsd:string .
+
+:ActualFinish a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Project,
+        :Resource,
+        :TaskTime,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range xsd:string .
+
+:ActualStart a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Project,
+        :Resource,
+        :TaskTime,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range xsd:string .
+
+:ActualUnits a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range xsd:decimal .
+
+:AssignsToActor a owl:ObjectProperty ;
+    rdfs:domain :Project,
+        :Resource,
+        :Task,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range :Actor .
+
+:AtCompleteCost a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :CostItem ;
+    rdfs:range xsd:decimal .
+
+:AtCompleteDuration a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Project,
+        :Resource,
+        :TaskTime,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range xsd:string .
+
+:AtCompleteUnits a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range xsd:decimal .
+
+:BaseRate_onDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range xsd:decimal .
+
+:Blocks a owl:Class ;
+    rdfs:subClassOf :MaterialResource .
+
+:BudgetedCost a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :CostItem ;
+    rdfs:range xsd:decimal .
+
+:BudgetedUnits a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range xsd:decimal .
+
+:Cement a owl:Class ;
+    rdfs:subClassOf :MaterialResource .
+
+:ConstraintsDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Constraints ;
+    rdfs:range xsd:string .
+
+:Cranes a owl:Class ;
+    rdfs:subClassOf :EquipmentResource .
+
+:CrewResource a owl:Class ;
+    rdfs:subClassOf :ConstructionResource .
+
+:DelayReason a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+:Description a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :CostItem,
+        :Project,
+        :Resource,
+        :Task,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range xsd:string .
+
+:Dumpers a owl:Class ;
+    rdfs:subClassOf :EquipmentResource .
+
+:DurationType a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain :TaskTime ;
+    rdfs:range :TaskDurationEnum .
+
+:EarlyFinish a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :TaskTime ;
+    rdfs:range xsd:string .
+
+:EarlyStart a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :TaskTime ;
+    rdfs:range xsd:string .
+
+:EquipmenntCost a owl:Class ;
+    rdfs:subClassOf :CostType .
+
+:Excavators a owl:Class ;
+    rdfs:subClassOf :EquipmentResource .
+
+:ExpenceItem a owl:Class ;
+    rdfs:subClassOf :CostType .
+
+:FreeFloat a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :TaskTime ;
+    rdfs:range xsd:string .
+
+:GlobalId a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :CostItem,
+        :Project,
+        :Resource,
+        :Task,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range xsd:string .
+
+:Id a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :CostItem,
+        :Project,
+        :Resource,
+        :Task,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range xsd:string .
+
+:IsCritical a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:boolean .
+
+:IsMilestone a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:boolean .
+
+:IsPrimaryResource a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range xsd:boolean .
+
+:LaborCost a owl:Class ;
+    rdfs:subClassOf :CostType .
+
+:LagTime a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :TaskRelSequence ;
+    rdfs:range xsd:string .
+
+:LateFinish a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :TaskTime ;
+    rdfs:range xsd:string .
+
+:LateStart a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :TaskTime ;
+    rdfs:range xsd:string .
+
+:MaterialCost a owl:Class ;
+    rdfs:subClassOf :CostType .
+
+:MaxUnits_per_day a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range xsd:decimal .
+
+:Name a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :CostItem,
+        :Project,
+        :Resource,
+        :Task,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range xsd:string .
+
+:PR-CON-RES-0010 a :Project,
+        owl:NamedIndividual ;
+    :hasWorkPackage :WP-RES-GEN-0010 .
+
+:PerCentCompletion a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :CostItem,
+        :Project,
+        :Task,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range xsd:decimal .
+
+:Priority a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:integer .
+
+:ProjectAddress a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Project ;
+    rdfs:range xsd:string .
+
+:ProjectPhase a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Project ;
+    rdfs:range xsd:string .
+
+:RemainingCost a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :CostItem ;
+    rdfs:range xsd:decimal .
+
+:RemainingDuration a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Project,
+        :Resource,
+        :TaskTime,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range xsd:string .
+
+:RemainingUnits a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range xsd:decimal .
+
+:ResourceInstructions a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+:ScheduleDuration a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Project,
+        :Resource,
+        :TaskTime,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range xsd:string .
+
+:ScheduleFinish a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Project,
+        :Resource,
+        :TaskTime,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range xsd:string .
+
+:ScheduleStart a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Project,
+        :Resource,
+        :TaskTime,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range xsd:string .
+
+:SequenceType a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain :TaskRelSequence ;
+    rdfs:range :TaskSequenceEnum .
+
+:StatusTime a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :TaskTime ;
+    rdfs:range xsd:string .
+
+:TileSetter a owl:Class ;
+    rdfs:subClassOf :LaborResource .
+
+:TotalFloat a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :TaskTime ;
+    rdfs:range xsd:string .
+
+:UnitsofMeasure a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range :Units .
+
+:UserDefinedResource a owl:Class ;
+    rdfs:subClassOf :ConstructionResource .
+
+:Wood a owl:Class ;
+    rdfs:subClassOf :MaterialResource .
+
+:WorkMethod a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+:hasConstraints a owl:ObjectProperty ;
+    rdfs:domain :Project,
+        :Resource,
+        :Task,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range :Constraints .
+
+:hasConstraintsType a owl:ObjectProperty ;
+    rdfs:domain :Constraints ;
+    rdfs:range :ConstraintsType .
+
+:hasCostCategory a owl:ObjectProperty ;
+    rdfs:domain :CostItem ;
+    rdfs:range :CostCategory .
+
+:hasCostItem a owl:ObjectProperty ;
+    rdfs:domain :Project,
+        :Task,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range :CostItem .
+
+:hasCostType a owl:ObjectProperty ;
+    rdfs:domain :CostItem ;
+    rdfs:range :CostType .
+
+:hasPredecessor a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain :TaskRelSequence ;
+    rdfs:range :Task .
+
+:hasProjectCategory a owl:ObjectProperty ;
+    rdfs:domain :Project ;
+    rdfs:range :ProjectCategory .
+
+:hasResourceCategory a owl:ObjectProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range :ResourceCategory .
+
+:hasResourceType a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range :ResourceType .
+
+:hasStatus a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range :ResourceStatus .
+
+:hasSubTask a owl:ObjectProperty ;
+    rdfs:domain :Task ;
+    rdfs:range :Task .
+
+:hasSubWBS a owl:ObjectProperty ;
+    rdfs:domain :WBS ;
+    rdfs:range :WBS .
+
+:hasSuccessor a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain :TaskRelSequence ;
+    rdfs:range :Task .
+
+:hasTask a owl:ObjectProperty ;
+    rdfs:domain :WBS ;
+    rdfs:range :Task .
+
+:hasTaskCategory a owl:ObjectProperty ;
+    rdfs:domain :Task ;
+    rdfs:range :TaskCategory .
+
+:hasTaskTime a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain :Task ;
+    rdfs:range :TaskTime .
+
+:hasTrackingTag a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range :TrackingTag .
+
+:hasWBS a owl:ObjectProperty ;
+    rdfs:domain :WorkPackage ;
+    rdfs:range :WBS .
+
+:hasWBSCategory a owl:ObjectProperty ;
+    rdfs:domain :WBS ;
+    rdfs:range :WBSCategory .
+
+:hasWorkPackage a owl:ObjectProperty ;
+    rdfs:domain :Project ;
+    rdfs:range :WorkPackage .
+
+:hasWorkPackageCategory a owl:ObjectProperty ;
+    rdfs:domain :WorkPackage ;
+    rdfs:range :WorkPackageCategory .
+
+:hasWorkStatus a owl:ObjectProperty ;
+    rdfs:domain :Project,
+        :Task,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range :WorkStatus .
+
+:requiresResource a owl:ObjectProperty ;
+    rdfs:domain :Project,
+        :Task,
+        :WBS,
+        :WorkPackage ;
+    rdfs:range :Resource .
+
+:vendor a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain :CostItem ;
+    rdfs:range xsd:string .
+
+:Actor a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:ConstraintsType a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:CostCategory a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:ECI-ENG-DR-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21588 ;
+    :BudgetedCost 11513 ;
+    :hasCostType :Equipment .
+
+:ECI-ENG-DR-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5919 ;
+    :BudgetedCost 22484 ;
+    :hasCostType :Equipment .
+
+:ECI-ENG-DR-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16119 ;
+    :BudgetedCost 8807 ;
+    :hasCostType :Equipment .
+
+:ECI-ENG-DR-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 26959 ;
+    :BudgetedCost 7810 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-01-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 11415 ;
+    :BudgetedCost 25560 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-01-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 28866 ;
+    :BudgetedCost 27784 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-01-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 12281 ;
+    :BudgetedCost 6252 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-01-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16003 ;
+    :BudgetedCost 16092 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-01-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 24339 ;
+    :BudgetedCost 6064 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-01-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 12255 ;
+    :BudgetedCost 10231 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-01-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 17318 ;
+    :BudgetedCost 16591 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-01-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 25840 ;
+    :BudgetedCost 17292 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-01-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 20710 ;
+    :BudgetedCost 17921 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-01-0100 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 28231 ;
+    :BudgetedCost 6031 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-01-0110 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 17258 ;
+    :BudgetedCost 29924 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-01-0120 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21095 ;
+    :BudgetedCost 6553 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-01-0130 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 24177 ;
+    :BudgetedCost 18688 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-01-0140 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 6902 ;
+    :BudgetedCost 26374 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-GF-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27480 ;
+    :BudgetedCost 15325 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-GF-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14785 ;
+    :BudgetedCost 11300 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-GF-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 20446 ;
+    :BudgetedCost 8141 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-GF-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 17579 ;
+    :BudgetedCost 8572 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-GF-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 22128 ;
+    :BudgetedCost 28701 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-GF-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 26086 ;
+    :BudgetedCost 17532 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-GF-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 13202 ;
+    :BudgetedCost 10655 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-GF-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 20836 ;
+    :BudgetedCost 23989 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-GF-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 11454 ;
+    :BudgetedCost 18453 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-GF-0100 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21447 ;
+    :BudgetedCost 23376 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-GF-0110 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 18637 ;
+    :BudgetedCost 9067 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-GF-0120 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29271 ;
+    :BudgetedCost 25274 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-GF-0130 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 11589 ;
+    :BudgetedCost 16230 ;
+    :hasCostType :Equipment .
+
+:ECI-FN-GF-0140 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5049 ;
+    :BudgetedCost 18583 ;
+    :hasCostType :Equipment .
+
+:ECI-GEN-ML-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8469 ;
+    :BudgetedCost 14605 ;
+    :hasCostType :Equipment .
+
+:ECI-GEN-ML-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 17401 ;
+    :BudgetedCost 14723 ;
+    :hasCostType :Equipment .
+
+:ECI-GEN-ML-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 12218 ;
+    :BudgetedCost 23400 ;
+    :hasCostType :Equipment .
+
+:ECI-GEN-ML-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8521 ;
+    :BudgetedCost 14022 ;
+    :hasCostType :Equipment .
+
+:ECI-GEN-ML-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21531 ;
+    :BudgetedCost 13105 ;
+    :hasCostType :Equipment .
+
+:ECI-GEN-ML-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 28100 ;
+    :BudgetedCost 8444 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-01-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 22005 ;
+    :BudgetedCost 28293 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-01-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10297 ;
+    :BudgetedCost 9163 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-01-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 12255 ;
+    :BudgetedCost 23948 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-01-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27679 ;
+    :BudgetedCost 7302 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-01-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16684 ;
+    :BudgetedCost 14503 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-01-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5756 ;
+    :BudgetedCost 5579 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-01-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21637 ;
+    :BudgetedCost 13380 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-01-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27568 ;
+    :BudgetedCost 11919 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-01-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8514 ;
+    :BudgetedCost 12284 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-FL-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 13032 ;
+    :BudgetedCost 8450 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-GF-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 7264 ;
+    :BudgetedCost 6106 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-GF-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 17054 ;
+    :BudgetedCost 21360 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-GF-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10291 ;
+    :BudgetedCost 26612 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-GF-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8275 ;
+    :BudgetedCost 19103 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-GF-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 13147 ;
+    :BudgetedCost 25567 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-GF-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 26928 ;
+    :BudgetedCost 27549 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-GF-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16179 ;
+    :BudgetedCost 12223 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-GF-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19904 ;
+    :BudgetedCost 22697 ;
+    :hasCostType :Equipment .
+
+:ECI-MEP-GF-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10896 ;
+    :BudgetedCost 28499 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-FN-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29915 ;
+    :BudgetedCost 17629 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-FN-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14785 ;
+    :BudgetedCost 20458 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-FN-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10082 ;
+    :BudgetedCost 18069 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-FN-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 22997 ;
+    :BudgetedCost 10210 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-FN-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21694 ;
+    :BudgetedCost 27055 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-FN-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 7460 ;
+    :BudgetedCost 5738 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-FN-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16764 ;
+    :BudgetedCost 17739 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-FN-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 13273 ;
+    :BudgetedCost 8147 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-FN-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 17751 ;
+    :BudgetedCost 17480 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-FN-0100 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 26651 ;
+    :BudgetedCost 25232 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-MEP-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27446 ;
+    :BudgetedCost 16279 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-MEP-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16360 ;
+    :BudgetedCost 19540 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-MEP-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10971 ;
+    :BudgetedCost 12411 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-MEP-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 11434 ;
+    :BudgetedCost 24552 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-MEP-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21722 ;
+    :BudgetedCost 20857 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-MEP-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19053 ;
+    :BudgetedCost 5234 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-MEP-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5315 ;
+    :BudgetedCost 12474 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-ST-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 24686 ;
+    :BudgetedCost 21965 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-ST-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 20294 ;
+    :BudgetedCost 29890 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-ST-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14699 ;
+    :BudgetedCost 5788 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-ST-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5331 ;
+    :BudgetedCost 13085 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-ST-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 12846 ;
+    :BudgetedCost 16839 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-ST-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14455 ;
+    :BudgetedCost 25478 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-ST-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 23428 ;
+    :BudgetedCost 12977 ;
+    :hasCostType :Equipment .
+
+:ECI-PRO-ST-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21967 ;
+    :BudgetedCost 18559 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27222 ;
+    :BudgetedCost 27007 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19217 ;
+    :BudgetedCost 11828 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 13057 ;
+    :BudgetedCost 22478 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 6525 ;
+    :BudgetedCost 26161 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14779 ;
+    :BudgetedCost 19152 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 11004 ;
+    :BudgetedCost 24618 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 20566 ;
+    :BudgetedCost 28358 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5309 ;
+    :BudgetedCost 21919 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 26471 ;
+    :BudgetedCost 20106 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0100 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 18386 ;
+    :BudgetedCost 25414 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0110 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16118 ;
+    :BudgetedCost 15865 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0120 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 26786 ;
+    :BudgetedCost 27654 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0130 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 6141 ;
+    :BudgetedCost 6723 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0140 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9278 ;
+    :BudgetedCost 20364 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0150 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 20637 ;
+    :BudgetedCost 5916 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0160 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10003 ;
+    :BudgetedCost 9816 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0170 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5314 ;
+    :BudgetedCost 20982 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0180 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 15129 ;
+    :BudgetedCost 27304 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0190 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 23948 ;
+    :BudgetedCost 28072 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-01-0200 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16373 ;
+    :BudgetedCost 29222 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-FL-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14624 ;
+    :BudgetedCost 23576 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-FL-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8278 ;
+    :BudgetedCost 26536 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-FL-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 6210 ;
+    :BudgetedCost 22560 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-FL-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8044 ;
+    :BudgetedCost 10092 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16959 ;
+    :BudgetedCost 29857 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27144 ;
+    :BudgetedCost 25795 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 24497 ;
+    :BudgetedCost 26068 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 24653 ;
+    :BudgetedCost 26596 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 22893 ;
+    :BudgetedCost 14320 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 6309 ;
+    :BudgetedCost 7457 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29075 ;
+    :BudgetedCost 11533 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10434 ;
+    :BudgetedCost 12009 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 6889 ;
+    :BudgetedCost 16882 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0100 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16985 ;
+    :BudgetedCost 19404 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0110 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5196 ;
+    :BudgetedCost 11801 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0120 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21411 ;
+    :BudgetedCost 14536 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0130 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21554 ;
+    :BudgetedCost 7886 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0140 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 17452 ;
+    :BudgetedCost 10995 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0150 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 23372 ;
+    :BudgetedCost 10672 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0160 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 22200 ;
+    :BudgetedCost 21919 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0170 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 26345 ;
+    :BudgetedCost 15236 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0180 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16572 ;
+    :BudgetedCost 9437 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0190 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27290 ;
+    :BudgetedCost 17377 ;
+    :hasCostType :Equipment .
+
+:ECI-ST-GF-0200 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 26667 ;
+    :BudgetedCost 28271 ;
+    :hasCostType :Equipment .
+
+:LCI-ENG-DR-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27062 ;
+    :BudgetedCost 26855 ;
+    :hasCostType :Labor .
+
+:LCI-ENG-DR-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19591 ;
+    :BudgetedCost 27384 ;
+    :hasCostType :Labor .
+
+:LCI-ENG-DR-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27094 ;
+    :BudgetedCost 18774 ;
+    :hasCostType :Labor .
+
+:LCI-ENG-DR-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 7509 ;
+    :BudgetedCost 28704 ;
+    :hasCostType :Labor .
+
+:LCI-FN-01-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10553 ;
+    :BudgetedCost 14325 ;
+    :hasCostType :Labor .
+
+:LCI-FN-01-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29266 ;
+    :BudgetedCost 16862 ;
+    :hasCostType :Labor .
+
+:LCI-FN-01-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 6188 ;
+    :BudgetedCost 16461 ;
+    :hasCostType :Labor .
+
+:LCI-FN-01-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 28782 ;
+    :BudgetedCost 15114 ;
+    :hasCostType :Labor .
+
+:LCI-FN-01-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 13922 ;
+    :BudgetedCost 25125 ;
+    :hasCostType :Labor .
+
+:LCI-FN-01-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29131 ;
+    :BudgetedCost 26994 ;
+    :hasCostType :Labor .
+
+:LCI-FN-01-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 6243 ;
+    :BudgetedCost 23127 ;
+    :hasCostType :Labor .
+
+:LCI-FN-01-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19646 ;
+    :BudgetedCost 9794 ;
+    :hasCostType :Labor .
+
+:LCI-FN-01-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8389 ;
+    :BudgetedCost 20644 ;
+    :hasCostType :Labor .
+
+:LCI-FN-01-0100 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 6400 ;
+    :BudgetedCost 19172 ;
+    :hasCostType :Labor .
+
+:LCI-FN-01-0110 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21789 ;
+    :BudgetedCost 5679 ;
+    :hasCostType :Labor .
+
+:LCI-FN-01-0120 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21246 ;
+    :BudgetedCost 23009 ;
+    :hasCostType :Labor .
+
+:LCI-FN-01-0130 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19817 ;
+    :BudgetedCost 23187 ;
+    :hasCostType :Labor .
+
+:LCI-FN-01-0140 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10422 ;
+    :BudgetedCost 19023 ;
+    :hasCostType :Labor .
+
+:LCI-FN-GF-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 26371 ;
+    :BudgetedCost 12062 ;
+    :hasCostType :Labor .
+
+:LCI-FN-GF-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 24492 ;
+    :BudgetedCost 24324 ;
+    :hasCostType :Labor .
+
+:LCI-FN-GF-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8115 ;
+    :BudgetedCost 22523 ;
+    :hasCostType :Labor .
+
+:LCI-FN-GF-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 20000 ;
+    :BudgetedCost 7355 ;
+    :hasCostType :Labor .
+
+:LCI-FN-GF-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 24360 ;
+    :BudgetedCost 10206 ;
+    :hasCostType :Labor .
+
+:LCI-FN-GF-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 25685 ;
+    :BudgetedCost 19402 ;
+    :hasCostType :Labor .
+
+:LCI-FN-GF-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29344 ;
+    :BudgetedCost 12498 ;
+    :hasCostType :Labor .
+
+:LCI-FN-GF-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27963 ;
+    :BudgetedCost 12955 ;
+    :hasCostType :Labor .
+
+:LCI-FN-GF-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 26624 ;
+    :BudgetedCost 6585 ;
+    :hasCostType :Labor .
+
+:LCI-FN-GF-0100 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 13234 ;
+    :BudgetedCost 22763 ;
+    :hasCostType :Labor .
+
+:LCI-FN-GF-0110 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 12519 ;
+    :BudgetedCost 22972 ;
+    :hasCostType :Labor .
+
+:LCI-FN-GF-0120 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 24524 ;
+    :BudgetedCost 19159 ;
+    :hasCostType :Labor .
+
+:LCI-FN-GF-0130 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14632 ;
+    :BudgetedCost 18850 ;
+    :hasCostType :Labor .
+
+:LCI-FN-GF-0140 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 18665 ;
+    :BudgetedCost 8830 ;
+    :hasCostType :Labor .
+
+:LCI-GEN-ML-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 17960 ;
+    :BudgetedCost 8216 ;
+    :hasCostType :Labor .
+
+:LCI-GEN-ML-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10585 ;
+    :BudgetedCost 9095 ;
+    :hasCostType :Labor .
+
+:LCI-GEN-ML-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 12762 ;
+    :BudgetedCost 12818 ;
+    :hasCostType :Labor .
+
+:LCI-GEN-ML-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 15968 ;
+    :BudgetedCost 8635 ;
+    :hasCostType :Labor .
+
+:LCI-GEN-ML-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 23040 ;
+    :BudgetedCost 16807 ;
+    :hasCostType :Labor .
+
+:LCI-GEN-ML-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9742 ;
+    :BudgetedCost 29639 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-01-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 28065 ;
+    :BudgetedCost 23806 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-01-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 25608 ;
+    :BudgetedCost 18423 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-01-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21871 ;
+    :BudgetedCost 12692 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-01-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5400 ;
+    :BudgetedCost 15867 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-01-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9782 ;
+    :BudgetedCost 24935 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-01-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29898 ;
+    :BudgetedCost 23074 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-01-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 23085 ;
+    :BudgetedCost 12981 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-01-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5238 ;
+    :BudgetedCost 15866 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-01-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10879 ;
+    :BudgetedCost 28859 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-FL-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 12094 ;
+    :BudgetedCost 14144 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-GF-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5763 ;
+    :BudgetedCost 19909 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-GF-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16605 ;
+    :BudgetedCost 7857 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-GF-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 13294 ;
+    :BudgetedCost 8718 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-GF-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21616 ;
+    :BudgetedCost 15575 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-GF-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 13490 ;
+    :BudgetedCost 26350 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-GF-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 22500 ;
+    :BudgetedCost 6280 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-GF-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9767 ;
+    :BudgetedCost 21348 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-GF-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29554 ;
+    :BudgetedCost 29267 ;
+    :hasCostType :Labor .
+
+:LCI-MEP-GF-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 28058 ;
+    :BudgetedCost 20663 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-FN-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 20137 ;
+    :BudgetedCost 15200 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-FN-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 17075 ;
+    :BudgetedCost 27097 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-FN-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 22775 ;
+    :BudgetedCost 26864 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-FN-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9193 ;
+    :BudgetedCost 20575 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-FN-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 18852 ;
+    :BudgetedCost 28834 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-FN-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 28118 ;
+    :BudgetedCost 21290 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-FN-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8757 ;
+    :BudgetedCost 28505 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-FN-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 7587 ;
+    :BudgetedCost 15360 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-FN-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8534 ;
+    :BudgetedCost 14478 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-FN-0100 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 28597 ;
+    :BudgetedCost 19474 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-MEP-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 28252 ;
+    :BudgetedCost 5593 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-MEP-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9885 ;
+    :BudgetedCost 14287 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-MEP-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5437 ;
+    :BudgetedCost 8349 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-MEP-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14655 ;
+    :BudgetedCost 25229 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-MEP-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10048 ;
+    :BudgetedCost 14127 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-MEP-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19588 ;
+    :BudgetedCost 19425 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-MEP-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29682 ;
+    :BudgetedCost 9464 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-ST-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 15707 ;
+    :BudgetedCost 29537 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-ST-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19470 ;
+    :BudgetedCost 19132 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-ST-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21834 ;
+    :BudgetedCost 23579 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-ST-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 17272 ;
+    :BudgetedCost 8708 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-ST-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9965 ;
+    :BudgetedCost 24016 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-ST-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 13121 ;
+    :BudgetedCost 7278 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-ST-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29099 ;
+    :BudgetedCost 14136 ;
+    :hasCostType :Labor .
+
+:LCI-PRO-ST-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8938 ;
+    :BudgetedCost 5929 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14203 ;
+    :BudgetedCost 13330 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 26145 ;
+    :BudgetedCost 25398 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19633 ;
+    :BudgetedCost 21790 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 25754 ;
+    :BudgetedCost 10396 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 24733 ;
+    :BudgetedCost 22137 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8244 ;
+    :BudgetedCost 14932 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 7989 ;
+    :BudgetedCost 5427 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 6882 ;
+    :BudgetedCost 7889 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5081 ;
+    :BudgetedCost 9286 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0100 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16820 ;
+    :BudgetedCost 14440 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0110 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 24292 ;
+    :BudgetedCost 5382 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0120 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 22581 ;
+    :BudgetedCost 19752 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0130 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19353 ;
+    :BudgetedCost 24351 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0140 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14512 ;
+    :BudgetedCost 15756 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0150 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 6069 ;
+    :BudgetedCost 10108 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0160 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 6984 ;
+    :BudgetedCost 10588 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0170 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27601 ;
+    :BudgetedCost 14307 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0180 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14652 ;
+    :BudgetedCost 18830 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0190 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8223 ;
+    :BudgetedCost 26399 ;
+    :hasCostType :Labor .
+
+:LCI-ST-01-0200 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 28594 ;
+    :BudgetedCost 22299 ;
+    :hasCostType :Labor .
+
+:LCI-ST-FL-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9762 ;
+    :BudgetedCost 7223 ;
+    :hasCostType :Labor .
+
+:LCI-ST-FL-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19143 ;
+    :BudgetedCost 8124 ;
+    :hasCostType :Labor .
+
+:LCI-ST-FL-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 13420 ;
+    :BudgetedCost 28012 ;
+    :hasCostType :Labor .
+
+:LCI-ST-FL-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 26272 ;
+    :BudgetedCost 5177 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 18542 ;
+    :BudgetedCost 13481 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9822 ;
+    :BudgetedCost 10215 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5229 ;
+    :BudgetedCost 11180 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8559 ;
+    :BudgetedCost 19449 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 18756 ;
+    :BudgetedCost 19242 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8687 ;
+    :BudgetedCost 29949 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 12876 ;
+    :BudgetedCost 25145 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 13583 ;
+    :BudgetedCost 21916 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 15855 ;
+    :BudgetedCost 22692 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0100 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 18920 ;
+    :BudgetedCost 7369 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0110 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 22201 ;
+    :BudgetedCost 26745 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0120 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10178 ;
+    :BudgetedCost 14226 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0130 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19077 ;
+    :BudgetedCost 25787 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0140 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14112 ;
+    :BudgetedCost 14979 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0150 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 12546 ;
+    :BudgetedCost 21865 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0160 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9997 ;
+    :BudgetedCost 14031 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0170 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 26480 ;
+    :BudgetedCost 29369 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0180 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27506 ;
+    :BudgetedCost 26801 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0190 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21091 ;
+    :BudgetedCost 7547 ;
+    :hasCostType :Labor .
+
+:LCI-ST-GF-0200 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 24695 ;
+    :BudgetedCost 13819 ;
+    :hasCostType :Labor .
+
+:MCI-ENG-DR-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19996 ;
+    :BudgetedCost 17158 ;
+    :hasCostType :Material .
+
+:MCI-ENG-DR-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29535 ;
+    :BudgetedCost 20334 ;
+    :hasCostType :Material .
+
+:MCI-ENG-DR-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29397 ;
+    :BudgetedCost 21498 ;
+    :hasCostType :Material .
+
+:MCI-ENG-DR-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5489 ;
+    :BudgetedCost 21277 ;
+    :hasCostType :Material .
+
+:MCI-FN-01-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 11463 ;
+    :BudgetedCost 8189 ;
+    :hasCostType :Material .
+
+:MCI-FN-01-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 23231 ;
+    :BudgetedCost 5623 ;
+    :hasCostType :Material .
+
+:MCI-FN-01-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8945 ;
+    :BudgetedCost 8941 ;
+    :hasCostType :Material .
+
+:MCI-FN-01-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 24035 ;
+    :BudgetedCost 21038 ;
+    :hasCostType :Material .
+
+:MCI-FN-01-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14871 ;
+    :BudgetedCost 25183 ;
+    :hasCostType :Material .
+
+:MCI-FN-01-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 15013 ;
+    :BudgetedCost 15208 ;
+    :hasCostType :Material .
+
+:MCI-FN-01-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9145 ;
+    :BudgetedCost 7678 ;
+    :hasCostType :Material .
+
+:MCI-FN-01-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 23086 ;
+    :BudgetedCost 15670 ;
+    :hasCostType :Material .
+
+:MCI-FN-01-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 15521 ;
+    :BudgetedCost 7829 ;
+    :hasCostType :Material .
+
+:MCI-FN-01-0100 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10117 ;
+    :BudgetedCost 14625 ;
+    :hasCostType :Material .
+
+:MCI-FN-01-0110 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9781 ;
+    :BudgetedCost 19519 ;
+    :hasCostType :Material .
+
+:MCI-FN-01-0120 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21141 ;
+    :BudgetedCost 12574 ;
+    :hasCostType :Material .
+
+:MCI-FN-01-0130 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10756 ;
+    :BudgetedCost 20168 ;
+    :hasCostType :Material .
+
+:MCI-FN-01-0140 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 11950 ;
+    :BudgetedCost 22187 ;
+    :hasCostType :Material .
+
+:MCI-FN-GF-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 20391 ;
+    :BudgetedCost 6365 ;
+    :hasCostType :Material .
+
+:MCI-FN-GF-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5681 ;
+    :BudgetedCost 5723 ;
+    :hasCostType :Material .
+
+:MCI-FN-GF-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 23169 ;
+    :BudgetedCost 7386 ;
+    :hasCostType :Material .
+
+:MCI-FN-GF-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10947 ;
+    :BudgetedCost 25684 ;
+    :hasCostType :Material .
+
+:MCI-FN-GF-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 24200 ;
+    :BudgetedCost 29001 ;
+    :hasCostType :Material .
+
+:MCI-FN-GF-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 28075 ;
+    :BudgetedCost 14697 ;
+    :hasCostType :Material .
+
+:MCI-FN-GF-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 6089 ;
+    :BudgetedCost 24763 ;
+    :hasCostType :Material .
+
+:MCI-FN-GF-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21611 ;
+    :BudgetedCost 27886 ;
+    :hasCostType :Material .
+
+:MCI-FN-GF-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 20933 ;
+    :BudgetedCost 26111 ;
+    :hasCostType :Material .
+
+:MCI-FN-GF-0100 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 22152 ;
+    :BudgetedCost 6531 ;
+    :hasCostType :Material .
+
+:MCI-FN-GF-0110 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 11417 ;
+    :BudgetedCost 6869 ;
+    :hasCostType :Material .
+
+:MCI-FN-GF-0120 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9617 ;
+    :BudgetedCost 6510 ;
+    :hasCostType :Material .
+
+:MCI-FN-GF-0130 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 13245 ;
+    :BudgetedCost 15783 ;
+    :hasCostType :Material .
+
+:MCI-FN-GF-0140 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29637 ;
+    :BudgetedCost 15512 ;
+    :hasCostType :Material .
+
+:MCI-GEN-ML-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19928 ;
+    :BudgetedCost 9674 ;
+    :hasCostType :Material .
+
+:MCI-GEN-ML-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29170 ;
+    :BudgetedCost 5141 ;
+    :hasCostType :Material .
+
+:MCI-GEN-ML-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5843 ;
+    :BudgetedCost 16477 ;
+    :hasCostType :Material .
+
+:MCI-GEN-ML-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 26111 ;
+    :BudgetedCost 12537 ;
+    :hasCostType :Material .
+
+:MCI-GEN-ML-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 25237 ;
+    :BudgetedCost 29588 ;
+    :hasCostType :Material .
+
+:MCI-GEN-ML-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8256 ;
+    :BudgetedCost 14651 ;
+    :hasCostType :Material .
+
+:MCI-MEP-01-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27085 ;
+    :BudgetedCost 16389 ;
+    :hasCostType :Material .
+
+:MCI-MEP-01-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 24168 ;
+    :BudgetedCost 18376 ;
+    :hasCostType :Material .
+
+:MCI-MEP-01-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 20966 ;
+    :BudgetedCost 6910 ;
+    :hasCostType :Material .
+
+:MCI-MEP-01-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 20791 ;
+    :BudgetedCost 22108 ;
+    :hasCostType :Material .
+
+:MCI-MEP-01-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 20100 ;
+    :BudgetedCost 29901 ;
+    :hasCostType :Material .
+
+:MCI-MEP-01-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19454 ;
+    :BudgetedCost 10021 ;
+    :hasCostType :Material .
+
+:MCI-MEP-01-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 25208 ;
+    :BudgetedCost 15299 ;
+    :hasCostType :Material .
+
+:MCI-MEP-01-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 22812 ;
+    :BudgetedCost 23151 ;
+    :hasCostType :Material .
+
+:MCI-MEP-01-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 15054 ;
+    :BudgetedCost 20343 ;
+    :hasCostType :Material .
+
+:MCI-MEP-FL-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29813 ;
+    :BudgetedCost 26495 ;
+    :hasCostType :Material .
+
+:MCI-MEP-GF-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 7807 ;
+    :BudgetedCost 9448 ;
+    :hasCostType :Material .
+
+:MCI-MEP-GF-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 18597 ;
+    :BudgetedCost 19537 ;
+    :hasCostType :Material .
+
+:MCI-MEP-GF-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 7398 ;
+    :BudgetedCost 28871 ;
+    :hasCostType :Material .
+
+:MCI-MEP-GF-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 25303 ;
+    :BudgetedCost 16660 ;
+    :hasCostType :Material .
+
+:MCI-MEP-GF-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 28216 ;
+    :BudgetedCost 7883 ;
+    :hasCostType :Material .
+
+:MCI-MEP-GF-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27459 ;
+    :BudgetedCost 21622 ;
+    :hasCostType :Material .
+
+:MCI-MEP-GF-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 28994 ;
+    :BudgetedCost 9999 ;
+    :hasCostType :Material .
+
+:MCI-MEP-GF-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9890 ;
+    :BudgetedCost 24113 ;
+    :hasCostType :Material .
+
+:MCI-MEP-GF-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 15792 ;
+    :BudgetedCost 17343 ;
+    :hasCostType :Material .
+
+:MCI-PRO-FN-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29238 ;
+    :BudgetedCost 13900 ;
+    :hasCostType :Material .
+
+:MCI-PRO-FN-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 18655 ;
+    :BudgetedCost 29477 ;
+    :hasCostType :Material .
+
+:MCI-PRO-FN-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 15924 ;
+    :BudgetedCost 19183 ;
+    :hasCostType :Material .
+
+:MCI-PRO-FN-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16592 ;
+    :BudgetedCost 17473 ;
+    :hasCostType :Material .
+
+:MCI-PRO-FN-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 28120 ;
+    :BudgetedCost 13499 ;
+    :hasCostType :Material .
+
+:MCI-PRO-FN-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 17456 ;
+    :BudgetedCost 26120 ;
+    :hasCostType :Material .
+
+:MCI-PRO-FN-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14249 ;
+    :BudgetedCost 7290 ;
+    :hasCostType :Material .
+
+:MCI-PRO-FN-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8643 ;
+    :BudgetedCost 26712 ;
+    :hasCostType :Material .
+
+:MCI-PRO-FN-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10610 ;
+    :BudgetedCost 7044 ;
+    :hasCostType :Material .
+
+:MCI-PRO-FN-0100 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10884 ;
+    :BudgetedCost 6337 ;
+    :hasCostType :Material .
+
+:MCI-PRO-MEP-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 15778 ;
+    :BudgetedCost 16048 ;
+    :hasCostType :Material .
+
+:MCI-PRO-MEP-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14960 ;
+    :BudgetedCost 19153 ;
+    :hasCostType :Material .
+
+:MCI-PRO-MEP-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 23112 ;
+    :BudgetedCost 18636 ;
+    :hasCostType :Material .
+
+:MCI-PRO-MEP-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 17990 ;
+    :BudgetedCost 24828 ;
+    :hasCostType :Material .
+
+:MCI-PRO-MEP-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5225 ;
+    :BudgetedCost 29970 ;
+    :hasCostType :Material .
+
+:MCI-PRO-MEP-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 17561 ;
+    :BudgetedCost 10285 ;
+    :hasCostType :Material .
+
+:MCI-PRO-MEP-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29729 ;
+    :BudgetedCost 19258 ;
+    :hasCostType :Material .
+
+:MCI-PRO-ST-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27173 ;
+    :BudgetedCost 27241 ;
+    :hasCostType :Material .
+
+:MCI-PRO-ST-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27295 ;
+    :BudgetedCost 19697 ;
+    :hasCostType :Material .
+
+:MCI-PRO-ST-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 24903 ;
+    :BudgetedCost 9647 ;
+    :hasCostType :Material .
+
+:MCI-PRO-ST-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16366 ;
+    :BudgetedCost 16011 ;
+    :hasCostType :Material .
+
+:MCI-PRO-ST-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 23622 ;
+    :BudgetedCost 7710 ;
+    :hasCostType :Material .
+
+:MCI-PRO-ST-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14769 ;
+    :BudgetedCost 7641 ;
+    :hasCostType :Material .
+
+:MCI-PRO-ST-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 22016 ;
+    :BudgetedCost 27732 ;
+    :hasCostType :Material .
+
+:MCI-PRO-ST-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9305 ;
+    :BudgetedCost 21060 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8453 ;
+    :BudgetedCost 12299 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 20851 ;
+    :BudgetedCost 12809 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 17765 ;
+    :BudgetedCost 22831 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 14344 ;
+    :BudgetedCost 28050 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 6300 ;
+    :BudgetedCost 13534 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 12665 ;
+    :BudgetedCost 5305 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21134 ;
+    :BudgetedCost 27519 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 28008 ;
+    :BudgetedCost 8706 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 7622 ;
+    :BudgetedCost 7834 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0100 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 21038 ;
+    :BudgetedCost 7484 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0110 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10739 ;
+    :BudgetedCost 20035 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0120 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 18792 ;
+    :BudgetedCost 18308 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0130 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16812 ;
+    :BudgetedCost 7395 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0140 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10238 ;
+    :BudgetedCost 28851 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0150 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 23222 ;
+    :BudgetedCost 27152 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0160 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29515 ;
+    :BudgetedCost 25925 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0170 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 5250 ;
+    :BudgetedCost 11768 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0180 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9363 ;
+    :BudgetedCost 10172 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0190 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 17326 ;
+    :BudgetedCost 7367 ;
+    :hasCostType :Material .
+
+:MCI-ST-01-0200 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10560 ;
+    :BudgetedCost 27943 ;
+    :hasCostType :Material .
+
+:MCI-ST-FL-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 27661 ;
+    :BudgetedCost 16309 ;
+    :hasCostType :Material .
+
+:MCI-ST-FL-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19368 ;
+    :BudgetedCost 21489 ;
+    :hasCostType :Material .
+
+:MCI-ST-FL-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 29724 ;
+    :BudgetedCost 9894 ;
+    :hasCostType :Material .
+
+:MCI-ST-FL-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 8430 ;
+    :BudgetedCost 8857 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0010 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 11179 ;
+    :BudgetedCost 15509 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0020 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 13145 ;
+    :BudgetedCost 9508 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0030 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 15533 ;
+    :BudgetedCost 24996 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0040 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 25701 ;
+    :BudgetedCost 17961 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0050 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 20953 ;
+    :BudgetedCost 22483 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0060 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 19780 ;
+    :BudgetedCost 5214 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0070 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 6401 ;
+    :BudgetedCost 24392 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0080 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 26336 ;
+    :BudgetedCost 27415 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0090 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 6490 ;
+    :BudgetedCost 14642 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0100 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 22622 ;
+    :BudgetedCost 12775 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0110 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 15465 ;
+    :BudgetedCost 29502 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0120 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 7261 ;
+    :BudgetedCost 18795 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0130 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 10925 ;
+    :BudgetedCost 12204 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0140 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16925 ;
+    :BudgetedCost 27029 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0150 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 16104 ;
+    :BudgetedCost 26073 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0160 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 11429 ;
+    :BudgetedCost 11272 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0170 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 23479 ;
+    :BudgetedCost 28061 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0180 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 22986 ;
+    :BudgetedCost 22714 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0190 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 13921 ;
+    :BudgetedCost 14774 ;
+    :hasCostType :Material .
+
+:MCI-ST-GF-0200 a :CostItem,
+        owl:NamedIndividual ;
+    :ActualCost 9476 ;
+    :BudgetedCost 8562 ;
+    :hasCostType :Material .
+
+:ProjectCategory a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:RS-BK_19ab4 a :Brick,
+        owl:NamedIndividual ;
+    :ActualUnits 296.0 ;
+    :BudgetedUnits 280.0 .
+
+:RS-BK_658e4 a :Brick,
+        owl:NamedIndividual ;
+    :ActualUnits 515.0 ;
+    :BudgetedUnits 500.0 .
+
+:RS-BW_0cf22 a :BindingWire,
+        owl:NamedIndividual ;
+    :ActualUnits 26.0 ;
+    :BudgetedUnits 10.0 .
+
+:RS-BW_14e1e a :BindingWire,
+        owl:NamedIndividual ;
+    :ActualUnits 41.0 ;
+    :BudgetedUnits 20.0 .
+
+:RS-BW_15ad3 a :BindingWire,
+        owl:NamedIndividual ;
+    :ActualUnits 33.0 ;
+    :BudgetedUnits 10.0 .
+
+:RS-BW_25086 a :BindingWire,
+        owl:NamedIndividual ;
+    :ActualUnits 49.0 ;
+    :BudgetedUnits 20.0 .
+
+:RS-BW_509b9 a :BindingWire,
+        owl:NamedIndividual ;
+    :ActualUnits 36.0 ;
+    :BudgetedUnits 20.0 .
+
+:RS-BW_6291d a :BindingWire,
+        owl:NamedIndividual ;
+    :ActualUnits 40.0 ;
+    :BudgetedUnits 20.0 .
+
+:RS-BW_85b4b a :BindingWire,
+        owl:NamedIndividual ;
+    :ActualUnits 40.0 ;
+    :BudgetedUnits 20.0 .
+
+:RS-BW_911f8 a :BindingWire,
+        owl:NamedIndividual ;
+    :ActualUnits 43.0 ;
+    :BudgetedUnits 20.0 .
+
+:RS-BW_f993d a :BindingWire,
+        owl:NamedIndividual ;
+    :ActualUnits 34.0 ;
+    :BudgetedUnits 10.0 .
+
+:RS-CC_2748a a :Concrete,
+        owl:NamedIndividual ;
+    :ActualUnits 56.0 ;
+    :BudgetedUnits 27.0 .
+
+:RS-CC_4f63b a :Concrete,
+        owl:NamedIndividual ;
+    :ActualUnits 44.0 ;
+    :BudgetedUnits 30.0 .
+
+:RS-CC_742c2 a :Concrete,
+        owl:NamedIndividual ;
+    :ActualUnits 45.0 ;
+    :BudgetedUnits 25.0 .
+
+:RS-CC_834a7 a :Concrete,
+        owl:NamedIndividual ;
+    :ActualUnits 29.0 ;
+    :BudgetedUnits 15.0 .
+
+:RS-CC_8d21e a :Concrete,
+        owl:NamedIndividual ;
+    :ActualUnits 49.0 ;
+    :BudgetedUnits 25.0 .
+
+:RS-CC_8ef07 a :Concrete,
+        owl:NamedIndividual ;
+    :ActualUnits 47.0 ;
+    :BudgetedUnits 32.0 .
+
+:RS-CC_952b5 a :Concrete,
+        owl:NamedIndividual ;
+    :ActualUnits 35.0 ;
+    :BudgetedUnits 16.0 .
+
+:RS-CC_af4fb a :Concrete,
+        owl:NamedIndividual ;
+    :ActualUnits 37.0 ;
+    :BudgetedUnits 12.0 .
+
+:RS-CC_f282e a :Concrete,
+        owl:NamedIndividual ;
+    :ActualUnits 28.0 ;
+    :BudgetedUnits 15.0 .
+
+:RS-CM_28df6 a :ConcreteMixers,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CM_3222a a :ConcreteMixers,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CM_62852 a :ConcreteMixers,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CM_673b2 a :ConcreteMixers,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CM_704a0 a :ConcreteMixers,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CM_70f29 a :ConcreteMixers,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CM_b178c a :ConcreteMixers,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CM_d427b a :ConcreteMixers,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CM_f4cc3 a :ConcreteMixers,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CP_2b86d a :ConcretePump,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CP_95652 a :ConcretePump,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CP_b13a5 a :ConcretePump,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CP_e4179 a :ConcretePump,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CP_ec1af a :ConcretePump,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CP_ef92e a :ConcretePump,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CP_f3183 a :ConcretePump,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CP_f68bd a :ConcretePump,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CP_fef22 a :ConcretePump,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_044cc a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_19fa3 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_1af3e a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CR_20d63 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CR_2d35c a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CR_2f5fe a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CR_32a64 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CR_37a1e a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_3bf01 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CR_4a607 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_4e960 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_50461 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CR_51c58 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_6ac43 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CR_6de41 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CR_72e14 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_76bf2 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_76ca5 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CR_8536f a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_88f48 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_9f097 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_a200e a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_ab5ed a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CR_b99de a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CR_b9f7f a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CR_cf8a2 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_dddd0 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_e142b a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_e2d0a a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_e59cd a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_e76ae a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CR_f0607 a :Carpenter,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-CT_6ec72 a :CeramicTiles,
+        owl:NamedIndividual ;
+    :ActualUnits 77.0 ;
+    :BudgetedUnits 50.0 .
+
+:RS-CT_a1e4e a :CeramicTiles,
+        owl:NamedIndividual ;
+    :ActualUnits 62.0 ;
+    :BudgetedUnits 50.0 .
+
+:RS-CV_3cf5a a :ConcreteVibrator,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CV_4c494 a :ConcreteVibrator,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CV_80ded a :ConcreteVibrator,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CV_848be a :ConcreteVibrator,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CV_a0930 a :ConcreteVibrator,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CV_b03d8 a :ConcreteVibrator,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CV_b9be0 a :ConcreteVibrator,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CV_ba16c a :ConcreteVibrator,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-CV_d0b3f a :ConcreteVibrator,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-EL_04c76 a :Electrician,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-EL_2c8ab a :Electrician,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-EL_452fe a :Electrician,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-EL_6e5b6 a :Electrician,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-EL_7b1d7 a :Electrician,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-EL_81ce4 a :Electrician,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-EL_88952 a :Electrician,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-EL_94582 a :Electrician,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-EL_aa529 a :Electrician,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-EL_db11e a :Electrician,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-EL_fa6aa a :Electrician,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-FW_1306d a :FormWork,
+        owl:NamedIndividual ;
+    :ActualUnits 53.0 ;
+    :BudgetedUnits 23.0 .
+
+:RS-FW_13b53 a :FormWork,
+        owl:NamedIndividual ;
+    :ActualUnits 49.0 ;
+    :BudgetedUnits 20.0 .
+
+:RS-FW_16ea1 a :FormWork,
+        owl:NamedIndividual ;
+    :ActualUnits 98.0 ;
+    :BudgetedUnits 80.0 .
+
+:RS-FW_58b23 a :FormWork,
+        owl:NamedIndividual ;
+    :ActualUnits 73.0 ;
+    :BudgetedUnits 60.0 .
+
+:RS-FW_633ba a :FormWork,
+        owl:NamedIndividual ;
+    :ActualUnits 246.0 ;
+    :BudgetedUnits 236.0 .
+
+:RS-FW_8b30e a :FormWork,
+        owl:NamedIndividual ;
+    :ActualUnits 62.0 ;
+    :BudgetedUnits 50.0 .
+
+:RS-FW_bfa29 a :FormWork,
+        owl:NamedIndividual ;
+    :ActualUnits 34.0 ;
+    :BudgetedUnits 20.0 .
+
+:RS-FW_e320a a :FormWork,
+        owl:NamedIndividual ;
+    :ActualUnits 138.0 ;
+    :BudgetedUnits 120.0 .
+
+:RS-FW_ef307 a :FormWork,
+        owl:NamedIndividual ;
+    :ActualUnits 46.0 ;
+    :BudgetedUnits 16.0 .
+
+:RS-HL_0ffd7 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_13e3c a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_1a24e a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_1dd7a a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_280a3 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_2a4ac a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 3.0 .
+
+:RS-HL_2d096 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_2d7b1 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_2e6af a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_2f7c5 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_30697 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_31d30 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_34c10 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_3b3e3 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_3b6d3 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_3baa8 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_3cdf6 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_49a82 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_5199c a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_549ee a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_55137 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_58c63 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_597f6 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_5a6bc a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_5a7e8 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_5adb6 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 3.0 .
+
+:RS-HL_5da23 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_60483 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_6087b a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_6be6a a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_6c9d8 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_6edd3 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_7463f a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_7b6c1 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_829f5 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_86312 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_863af a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_87ba4 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_8ce75 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_8df09 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_91eaf a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 3.0 .
+
+:RS-HL_93dd3 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_98ca8 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_99382 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_99b27 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_9ce3b a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_a0b37 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_a3886 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_ac41c a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_b5ff2 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_b7d0d a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_be89d a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_bf8d6 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_c0c97 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_c2bb1 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 3.0 .
+
+:RS-HL_c2d3c a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_c6268 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_c787c a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_c7b2b a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 3.0 .
+
+:RS-HL_c7d03 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_c8019 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 3.0 .
+
+:RS-HL_cfacc a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_cfca1 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_d3a66 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 3.0 .
+
+:RS-HL_dc2ef a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-HL_dc924 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 3.0 .
+
+:RS-HL_deb04 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_e338b a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_e6689 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 3.0 .
+
+:RS-HL_e7fdd a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 3.0 .
+
+:RS-HL_e93cf a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_ed948 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_ef3a0 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 4.0 .
+
+:RS-HL_f0c47 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 3.0 .
+
+:RS-HL_f3383 a :Helper,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-IW_31b05 a :Ironworker,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-IW_33493 a :Ironworker,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-IW_3ef0a a :Ironworker,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-IW_45dd5 a :Ironworker,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-IW_65ab2 a :Ironworker,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-IW_739ec a :Ironworker,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-IW_99beb a :Ironworker,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-IW_e6615 a :Ironworker,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-IW_eb0ba a :Ironworker,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-MS_2a654 a :Mason,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-MS_33e0f a :Mason,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-MS_9f615 a :Mason,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-MS_b546d a :Mason,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-PL_23c36 a :Plumber,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-PL_35e11 a :Plumber,
+        owl:NamedIndividual ;
+    :BudgetedUnits 3.0 .
+
+:RS-PL_44cb8 a :Plumber,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-PL_7c7ea a :Plumber,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-PL_859b4 a :Plumber,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-PL_a5ac9 a :Plumber,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-PL_b5863 a :Plumber,
+        owl:NamedIndividual ;
+    :BudgetedUnits 3.0 .
+
+:RS-PL_b6420 a :Plumber,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-PL_b6797 a :Plumber,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-PL_db468 a :Plumber,
+        owl:NamedIndividual ;
+    :BudgetedUnits 2.0 .
+
+:RS-PL_ddfc3 a :Plumber,
+        owl:NamedIndividual ;
+    :BudgetedUnits 1.0 .
+
+:RS-PT_12670 a :Paint,
+        owl:NamedIndividual ;
+    :ActualUnits 66.0 ;
+    :BudgetedUnits 47.0 .
+
+:RS-PT_12a07 a :Paint,
+        owl:NamedIndividual ;
+    :ActualUnits 97.0 ;
+    :BudgetedUnits 76.0 .
+
+:RS-PT_295a4 a :Paint,
+        owl:NamedIndividual ;
+    :ActualUnits 114.0 ;
+    :BudgetedUnits 90.0 .
+
+:RS-PT_7e4b3 a :Paint,
+        owl:NamedIndividual ;
+    :ActualUnits 145.0 ;
+    :BudgetedUnits 129.0 .
+
+:RS-PT_a7916 a :Paint,
+        owl:NamedIndividual ;
+    :ActualUnits 72.0 ;
+    :BudgetedUnits 59.0 .
+
+:RS-PT_f3f07 a :Paint,
+        owl:NamedIndividual ;
+    :ActualUnits 69.0 ;
+    :BudgetedUnits 45.0 .
+
+:RS-ST_1a609 a :Steel,
+        owl:NamedIndividual ;
+    :ActualUnits 140.0 ;
+    :BudgetedUnits 130.0 .
+
+:RS-ST_26010 a :Steel,
+        owl:NamedIndividual ;
+    :ActualUnits 77.0 ;
+    :BudgetedUnits 50.0 .
+
+:RS-ST_47996 a :Steel,
+        owl:NamedIndividual ;
+    :ActualUnits 521.0 ;
+    :BudgetedUnits 500.0 .
+
+:RS-ST_bc061 a :Steel,
+        owl:NamedIndividual ;
+    :ActualUnits 343.0 ;
+    :BudgetedUnits 320.0 .
+
+:RS-ST_bca0b a :Steel,
+        owl:NamedIndividual ;
+    :ActualUnits 269.0 ;
+    :BudgetedUnits 250.0 .
+
+:RS-ST_fbdf9 a :Steel,
+        owl:NamedIndividual ;
+    :ActualUnits 269.0 ;
+    :BudgetedUnits 250.0 .
+
+:RS-ST_ff109 a :Steel,
+        owl:NamedIndividual ;
+    :ActualUnits 300.0 ;
+    :BudgetedUnits 270.0 .
+
+:ResourceCategory a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:ResourceStatus a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:TA-ENG-DR-0010 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ENG-DR-0010"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Submission of  Structural & Architectural Shop Drawings"^^xsd:string ;
+    :hasCostItem :ECI-ENG-DR-0010,
+        :LCI-ENG-DR-0010,
+        :MCI-ENG-DR-0010 ;
+    :hasTaskTime :TT-ENG-DR-0010 ;
+    :hasWorkStatus :COMPLETED .
+
+:TA-ENG-DR-0020 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ENG-DR-0020"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Submission of MEP Shop Drawings"^^xsd:string ;
+    :hasCostItem :ECI-ENG-DR-0020,
+        :LCI-ENG-DR-0020,
+        :MCI-ENG-DR-0020 ;
+    :hasTaskTime :TT-ENG-DR-0020 ;
+    :hasWorkStatus :COMPLETED .
+
+:TA-ENG-DR-0030 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ENG-DR-0030"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Approval of  Structural & Architectural Shop Drawings"^^xsd:string ;
+    :hasCostItem :ECI-ENG-DR-0030,
+        :LCI-ENG-DR-0030,
+        :MCI-ENG-DR-0030 ;
+    :hasTaskTime :TT-ENG-DR-0030 ;
+    :hasWorkStatus :COMPLETED .
+
+:TA-ENG-DR-0040 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ENG-DR-0040"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Approval of MEP Shop Drawings"^^xsd:string ;
+    :hasCostItem :ECI-ENG-DR-0040,
+        :LCI-ENG-DR-0040,
+        :MCI-ENG-DR-0040 ;
+    :hasTaskTime :TT-ENG-DR-0040 ;
+    :hasWorkStatus :COMPLETED .
+
+:TA-FN-01-0010 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-01-0010"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Block Works"^^xsd:string ;
+    :hasCostItem :ECI-FN-01-0010,
+        :LCI-FN-01-0010,
+        :MCI-FN-01-0010 ;
+    :hasTaskTime :TT-FN-01-0010 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-BK_658e4,
+        :RS-HL_280a3,
+        :RS-MS_2a654 .
+
+:TA-FN-01-0020 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-01-0020"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Door Installation"^^xsd:string ;
+    :hasCostItem :ECI-FN-01-0020,
+        :LCI-FN-01-0020,
+        :MCI-FN-01-0020 ;
+    :hasTaskTime :TT-FN-01-0020 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CR_ab5ed,
+        :RS-HL_c2d3c .
+
+:TA-FN-01-0030 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-01-0030"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Aluminum Works Windows"^^xsd:string ;
+    :hasCostItem :ECI-FN-01-0030,
+        :LCI-FN-01-0030,
+        :MCI-FN-01-0030 ;
+    :hasTaskTime :TT-FN-01-0030 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CR_20d63,
+        :RS-HL_2d096 .
+
+:TA-FN-01-0040 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-01-0040"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Plaster 1st Coat"^^xsd:string ;
+    :hasCostItem :ECI-FN-01-0040,
+        :LCI-FN-01-0040,
+        :MCI-FN-01-0040 ;
+    :hasTaskTime :TT-FN-01-0040 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-HL_549ee,
+        :RS-MS_b546d .
+
+:TA-FN-01-0050 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-01-0050"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Plaster 2nd & Final Coats"^^xsd:string ;
+    :hasCostItem :ECI-FN-01-0050,
+        :LCI-FN-01-0050,
+        :MCI-FN-01-0050 ;
+    :hasTaskTime :TT-FN-01-0050 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CR_76bf2,
+        :RS-HL_49a82 .
+
+:TA-FN-01-0060 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-01-0060"^^xsd:string ;
+    :IsCritical true ;
+    :Name "False Ceiling Hangers & Supports"^^xsd:string ;
+    :hasCostItem :ECI-FN-01-0060,
+        :LCI-FN-01-0060,
+        :MCI-FN-01-0060 ;
+    :hasTaskTime :TT-FN-01-0060 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CR_cf8a2,
+        :RS-HL_dc2ef .
+
+:TA-FN-01-0070 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-01-0070"^^xsd:string ;
+    :IsCritical true ;
+    :Name "False Ceiling Final Fix"^^xsd:string ;
+    :hasCostItem :ECI-FN-01-0070,
+        :LCI-FN-01-0070,
+        :MCI-FN-01-0070 ;
+    :hasTaskTime :TT-FN-01-0070 ;
+    :hasWorkStatus :NOTSTARTED .
+
+:TA-FN-01-0080 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-01-0080"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Paint 1st Application"^^xsd:string ;
+    :hasCostItem :ECI-FN-01-0080,
+        :LCI-FN-01-0080,
+        :MCI-FN-01-0080 ;
+    :hasTaskTime :TT-FN-01-0080 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-HL_cfacc,
+        :RS-PT_f3f07 .
+
+:TA-FN-01-0090 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-01-0090"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Paint 2nd Application"^^xsd:string ;
+    :hasCostItem :ECI-FN-01-0090,
+        :LCI-FN-01-0090,
+        :MCI-FN-01-0090 ;
+    :hasTaskTime :TT-FN-01-0090 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-HL_597f6,
+        :RS-PT_12670 .
+
+:TA-FN-01-0100 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-01-0100"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Paint Final Application"^^xsd:string ;
+    :hasCostItem :ECI-FN-01-0100,
+        :LCI-FN-01-0100,
+        :MCI-FN-01-0100 ;
+    :hasTaskTime :TT-FN-01-0100 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-HL_dc924,
+        :RS-PT_295a4 .
+
+:TA-FN-01-0110 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-01-0110"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Waterproofing Wet Area"^^xsd:string ;
+    :hasCostItem :ECI-FN-01-0110,
+        :LCI-FN-01-0110,
+        :MCI-FN-01-0110 ;
+    :hasTaskTime :TT-FN-01-0110 ;
+    :hasWorkStatus :NOTSTARTED .
+
+:TA-FN-01-0120 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-01-0120"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Stair Railing"^^xsd:string ;
+    :hasCostItem :ECI-FN-01-0120,
+        :LCI-FN-01-0120,
+        :MCI-FN-01-0120 ;
+    :hasTaskTime :TT-FN-01-0120 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CT_6ec72,
+        :RS-HL_5da23 .
+
+:TA-FN-01-0130 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-01-0130"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Marble Flooring"^^xsd:string ;
+    :hasCostItem :ECI-FN-01-0130,
+        :LCI-FN-01-0130,
+        :MCI-FN-01-0130 ;
+    :hasTaskTime :TT-FN-01-0130 ;
+    :hasWorkStatus :NOTSTARTED .
+
+:TA-FN-01-0140 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-01-0140"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Furnature & Other Finishing Works"^^xsd:string ;
+    :hasCostItem :ECI-FN-01-0140,
+        :LCI-FN-01-0140,
+        :MCI-FN-01-0140 ;
+    :hasTaskTime :TT-FN-01-0140 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-PL_35e11 .
+
+:TA-FN-GF-0010 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-GF-0010"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Block Works"^^xsd:string ;
+    :hasCostItem :ECI-FN-GF-0010,
+        :LCI-FN-GF-0010,
+        :MCI-FN-GF-0010 ;
+    :hasTaskTime :TT-FN-GF-0010 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-BK_19ab4,
+        :RS-HL_87ba4,
+        :RS-MS_9f615 .
+
+:TA-FN-GF-0020 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-GF-0020"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Door Installation"^^xsd:string ;
+    :hasCostItem :ECI-FN-GF-0020,
+        :LCI-FN-GF-0020,
+        :MCI-FN-GF-0020 ;
+    :hasTaskTime :TT-FN-GF-0020 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-CR_32a64,
+        :RS-HL_0ffd7 .
+
+:TA-FN-GF-0030 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-GF-0030"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Aluminum Works Windows"^^xsd:string ;
+    :hasCostItem :ECI-FN-GF-0030,
+        :LCI-FN-GF-0030,
+        :MCI-FN-GF-0030 ;
+    :hasTaskTime :TT-FN-GF-0030 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-CR_6ac43,
+        :RS-HL_e338b .
+
+:TA-FN-GF-0040 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-GF-0040"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Plaster 1st Coat"^^xsd:string ;
+    :hasCostItem :ECI-FN-GF-0040,
+        :LCI-FN-GF-0040,
+        :MCI-FN-GF-0040 ;
+    :hasTaskTime :TT-FN-GF-0040 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-HL_55137,
+        :RS-MS_33e0f .
+
+:TA-FN-GF-0050 a :Task,
+        owl:NamedIndividual ;
+    :DelayReason "Procurement Delay" ;
+    :Id "TA-FN-GF-0050"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Plaster 2nd & Final Coats"^^xsd:string ;
+    :hasCostItem :ECI-FN-GF-0050,
+        :LCI-FN-GF-0050,
+        :MCI-FN-GF-0050 ;
+    :hasTaskTime :TT-FN-GF-0050 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-CR_19fa3,
+        :RS-HL_c787c .
+
+:TA-FN-GF-0060 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-GF-0060"^^xsd:string ;
+    :IsCritical false ;
+    :Name "False Ceiling Hangers & Supports"^^xsd:string ;
+    :hasCostItem :ECI-FN-GF-0060,
+        :LCI-FN-GF-0060,
+        :MCI-FN-GF-0060 ;
+    :hasTaskTime :TT-FN-GF-0060 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-CR_e142b,
+        :RS-HL_5a6bc .
+
+:TA-FN-GF-0070 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-GF-0070"^^xsd:string ;
+    :IsCritical false ;
+    :Name "False Ceiling Final Fix"^^xsd:string ;
+    :hasCostItem :ECI-FN-GF-0070,
+        :LCI-FN-GF-0070,
+        :MCI-FN-GF-0070 ;
+    :hasTaskTime :TT-FN-GF-0070 ;
+    :hasWorkStatus :STARTED .
+
+:TA-FN-GF-0080 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-GF-0080"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Paint 1st Application"^^xsd:string ;
+    :hasCostItem :ECI-FN-GF-0080,
+        :LCI-FN-GF-0080,
+        :MCI-FN-GF-0080 ;
+    :hasTaskTime :TT-FN-GF-0080 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-HL_1a24e,
+        :RS-PT_7e4b3 .
+
+:TA-FN-GF-0090 a :Task,
+        owl:NamedIndividual ;
+    :DelayReason "Procurement Delay" ;
+    :Id "TA-FN-GF-0090"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Paint 2nd Application"^^xsd:string ;
+    :hasCostItem :ECI-FN-GF-0090,
+        :LCI-FN-GF-0090,
+        :MCI-FN-GF-0090 ;
+    :hasTaskTime :TT-FN-GF-0090 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-HL_34c10,
+        :RS-PT_a7916 .
+
+:TA-FN-GF-0100 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-GF-0100"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Paint Final Application"^^xsd:string ;
+    :hasCostItem :ECI-FN-GF-0100,
+        :LCI-FN-GF-0100,
+        :MCI-FN-GF-0100 ;
+    :hasTaskTime :TT-FN-GF-0100 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-HL_c7b2b,
+        :RS-PT_12a07 .
+
+:TA-FN-GF-0110 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-GF-0110"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Waterproofing Wet Area"^^xsd:string ;
+    :hasCostItem :ECI-FN-GF-0110,
+        :LCI-FN-GF-0110,
+        :MCI-FN-GF-0110 ;
+    :hasTaskTime :TT-FN-GF-0110 ;
+    :hasWorkStatus :STARTED .
+
+:TA-FN-GF-0120 a :Task,
+        owl:NamedIndividual ;
+    :DelayReason "Weather Conditions" ;
+    :Id "TA-FN-GF-0120"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Stair Railing"^^xsd:string ;
+    :hasCostItem :ECI-FN-GF-0120,
+        :LCI-FN-GF-0120,
+        :MCI-FN-GF-0120 ;
+    :hasTaskTime :TT-FN-GF-0120 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-CT_a1e4e,
+        :RS-HL_8df09 .
+
+:TA-FN-GF-0130 a :Task,
+        owl:NamedIndividual ;
+    :DelayReason "Procurement Delay" ;
+    :Id "TA-FN-GF-0130"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Marble Flooring"^^xsd:string ;
+    :hasCostItem :ECI-FN-GF-0130,
+        :LCI-FN-GF-0130,
+        :MCI-FN-GF-0130 ;
+    :hasTaskTime :TT-FN-GF-0130 ;
+    :hasWorkStatus :STARTED .
+
+:TA-FN-GF-0140 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-FN-GF-0140"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Furnature & Other Finishing Works"^^xsd:string ;
+    :hasCostItem :ECI-FN-GF-0140,
+        :LCI-FN-GF-0140,
+        :MCI-FN-GF-0140 ;
+    :hasTaskTime :TT-FN-GF-0140 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-PL_b5863 .
+
+:TA-GEN-ML-0010 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-GEN-ML-0010"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Project Commencement Date"^^xsd:string ;
+    :hasCostItem :ECI-GEN-ML-0010,
+        :LCI-GEN-ML-0010,
+        :MCI-GEN-ML-0010 ;
+    :hasTaskTime :TT-GEN-ML-0010 ;
+    :hasWorkStatus :COMPLETED .
+
+:TA-GEN-ML-0020 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-GEN-ML-0020"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Site Possessing"^^xsd:string ;
+    :hasCostItem :ECI-GEN-ML-0020,
+        :LCI-GEN-ML-0020,
+        :MCI-GEN-ML-0020 ;
+    :hasTaskTime :TT-GEN-ML-0020 ;
+    :hasWorkStatus :COMPLETED .
+
+:TA-GEN-ML-0030 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-GEN-ML-0030"^^xsd:string ;
+    :IsCritical true ;
+    :Name "DSC Receive AFC Documents/ Drawings and design NOC"^^xsd:string ;
+    :hasCostItem :ECI-GEN-ML-0030,
+        :LCI-GEN-ML-0030,
+        :MCI-GEN-ML-0030 ;
+    :hasTaskTime :TT-GEN-ML-0030 ;
+    :hasWorkStatus :COMPLETED .
+
+:TA-GEN-ML-0040 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-GEN-ML-0040"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Prelimineries"^^xsd:string ;
+    :hasCostItem :ECI-GEN-ML-0040,
+        :LCI-GEN-ML-0040,
+        :MCI-GEN-ML-0040 ;
+    :hasTaskTime :TT-GEN-ML-0040 ;
+    :hasWorkStatus :STARTED .
+
+:TA-GEN-ML-0050 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-GEN-ML-0050"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Testing & Commissioning"^^xsd:string ;
+    :hasCostItem :ECI-GEN-ML-0050,
+        :LCI-GEN-ML-0050,
+        :MCI-GEN-ML-0050 ;
+    :hasTaskTime :TT-GEN-ML-0050 ;
+    :hasWorkStatus :NOTSTARTED .
+
+:TA-GEN-ML-0060 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-GEN-ML-0060"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Project Finish Date"^^xsd:string ;
+    :hasCostItem :ECI-GEN-ML-0060,
+        :LCI-GEN-ML-0060,
+        :MCI-GEN-ML-0060 ;
+    :hasTaskTime :TT-GEN-ML-0060 ;
+    :hasWorkStatus :NOTSTARTED .
+
+:TA-MEP-01-0010 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-MEP-01-0010"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Installation Drainage and Sanitary Pipes"^^xsd:string ;
+    :hasCostItem :ECI-MEP-01-0010,
+        :LCI-MEP-01-0010,
+        :MCI-MEP-01-0010 ;
+    :hasTaskTime :TT-MEP-01-0010 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-PL_b6420 .
+
+:TA-MEP-01-0020 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-MEP-01-0020"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Installation Water Supply Pipes"^^xsd:string ;
+    :hasCostItem :ECI-MEP-01-0020,
+        :LCI-MEP-01-0020,
+        :MCI-MEP-01-0020 ;
+    :hasTaskTime :TT-MEP-01-0020 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-PL_7c7ea .
+
+:TA-MEP-01-0030 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-MEP-01-0030"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Testing  Drainage and Sanitary Pipes"^^xsd:string ;
+    :hasCostItem :ECI-MEP-01-0030,
+        :LCI-MEP-01-0030,
+        :MCI-MEP-01-0030 ;
+    :hasTaskTime :TT-MEP-01-0030 ;
+    :hasWorkStatus :NOTSTARTED .
+
+:TA-MEP-01-0040 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-MEP-01-0040"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Testing  Water Supply Pipes"^^xsd:string ;
+    :hasCostItem :ECI-MEP-01-0040,
+        :LCI-MEP-01-0040,
+        :MCI-MEP-01-0040 ;
+    :hasTaskTime :TT-MEP-01-0040 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-EL_db11e,
+        :RS-HL_3b3e3 .
+
+:TA-MEP-01-0050 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-MEP-01-0050"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Installation of Wiring Accessories"^^xsd:string ;
+    :hasCostItem :ECI-MEP-01-0050,
+        :LCI-MEP-01-0050,
+        :MCI-MEP-01-0050 ;
+    :hasTaskTime :TT-MEP-01-0050 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-EL_6e5b6,
+        :RS-HL_2f7c5 .
+
+:TA-MEP-01-0060 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-MEP-01-0060"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Installation of Control System devices"^^xsd:string ;
+    :hasCostItem :ECI-MEP-01-0060,
+        :LCI-MEP-01-0060,
+        :MCI-MEP-01-0060 ;
+    :hasTaskTime :TT-MEP-01-0060 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-EL_04c76,
+        :RS-HL_863af .
+
+:TA-MEP-01-0070 a :Task,
+        owl:NamedIndividual ;
+    :DelayReason "Weather Conditions" ;
+    :Id "TA-MEP-01-0070"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Inspection of Concealed Conduits for Lighting & Power"^^xsd:string ;
+    :hasCostItem :ECI-MEP-01-0070,
+        :LCI-MEP-01-0070,
+        :MCI-MEP-01-0070 ;
+    :hasTaskTime :TT-MEP-01-0070 ;
+    :hasWorkStatus :NOTSTARTED .
+
+:TA-MEP-01-0080 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-MEP-01-0080"^^xsd:string ;
+    :IsCritical true ;
+    :Name "MEP Final Fix in Slab Section"^^xsd:string ;
+    :hasCostItem :ECI-MEP-01-0080,
+        :LCI-MEP-01-0080,
+        :MCI-MEP-01-0080 ;
+    :hasTaskTime :TT-MEP-01-0080 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-EL_aa529,
+        :RS-HL_a0b37,
+        :RS-PL_db468 .
+
+:TA-MEP-01-0090 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-MEP-01-0090"^^xsd:string ;
+    :IsCritical true ;
+    :Name "MEP Final Fix in Wall Section"^^xsd:string ;
+    :hasCostItem :ECI-MEP-01-0090,
+        :LCI-MEP-01-0090,
+        :MCI-MEP-01-0090 ;
+    :hasTaskTime :TT-MEP-01-0090 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-EL_94582,
+        :RS-HL_5a7e8,
+        :RS-PL_a5ac9 .
+
+:TA-MEP-FL-0040 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-MEP-FL-0040"^^xsd:string ;
+    :IsCritical true ;
+    :Name "MEP Works In Foundation"^^xsd:string ;
+    :hasCostItem :ECI-MEP-FL-0040,
+        :LCI-MEP-FL-0040,
+        :MCI-MEP-FL-0040 ;
+    :hasTaskTime :TT-MEP-FL-0040 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-EL_88952,
+        :RS-HL_99b27,
+        :RS-PL_859b4 .
+
+:TA-MEP-GF-0010 a :Task,
+        owl:NamedIndividual ;
+    :DelayReason "Procurement Delay" ;
+    :Id "TA-MEP-GF-0010"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Installation Drainage and Sanitary Pipes"^^xsd:string ;
+    :hasCostItem :ECI-MEP-GF-0010,
+        :LCI-MEP-GF-0010,
+        :MCI-MEP-GF-0010 ;
+    :hasTaskTime :TT-MEP-GF-0010 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-PL_44cb8 .
+
+:TA-MEP-GF-0020 a :Task,
+        owl:NamedIndividual ;
+    :DelayReason "Labor Shortages" ;
+    :Id "TA-MEP-GF-0020"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Installation Water Supply Pipes"^^xsd:string ;
+    :hasCostItem :ECI-MEP-GF-0020,
+        :LCI-MEP-GF-0020,
+        :MCI-MEP-GF-0020 ;
+    :hasTaskTime :TT-MEP-GF-0020 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-PL_ddfc3 .
+
+:TA-MEP-GF-0030 a :Task,
+        owl:NamedIndividual ;
+    :DelayReason "Procurement Delay" ;
+    :Id "TA-MEP-GF-0030"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Testing  Drainage and Sanitary Pipes"^^xsd:string ;
+    :hasCostItem :ECI-MEP-GF-0030,
+        :LCI-MEP-GF-0030,
+        :MCI-MEP-GF-0030 ;
+    :hasTaskTime :TT-MEP-GF-0030 ;
+    :hasWorkStatus :STARTED .
+
+:TA-MEP-GF-0040 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-MEP-GF-0040"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Testing  Water Supply Pipes"^^xsd:string ;
+    :hasCostItem :ECI-MEP-GF-0040,
+        :LCI-MEP-GF-0040,
+        :MCI-MEP-GF-0040 ;
+    :hasTaskTime :TT-MEP-GF-0040 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-EL_fa6aa,
+        :RS-HL_f3383 .
+
+:TA-MEP-GF-0050 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-MEP-GF-0050"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Installation of Wiring Accessories"^^xsd:string ;
+    :hasCostItem :ECI-MEP-GF-0050,
+        :LCI-MEP-GF-0050,
+        :MCI-MEP-GF-0050 ;
+    :hasTaskTime :TT-MEP-GF-0050 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-EL_81ce4,
+        :RS-HL_2d7b1 .
+
+:TA-MEP-GF-0060 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-MEP-GF-0060"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Installation of Control System devices"^^xsd:string ;
+    :hasCostItem :ECI-MEP-GF-0060,
+        :LCI-MEP-GF-0060,
+        :MCI-MEP-GF-0060 ;
+    :hasTaskTime :TT-MEP-GF-0060 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-EL_2c8ab,
+        :RS-HL_1dd7a .
+
+:TA-MEP-GF-0070 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-MEP-GF-0070"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Inspection of Concealed Conduits for Lighting & Power"^^xsd:string ;
+    :hasCostItem :ECI-MEP-GF-0070,
+        :LCI-MEP-GF-0070,
+        :MCI-MEP-GF-0070 ;
+    :hasTaskTime :TT-MEP-GF-0070 ;
+    :hasWorkStatus :STARTED .
+
+:TA-MEP-GF-0080 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-MEP-GF-0080"^^xsd:string ;
+    :IsCritical false ;
+    :Name "MEP Final Fix in Slab Section"^^xsd:string ;
+    :hasCostItem :ECI-MEP-GF-0080,
+        :LCI-MEP-GF-0080,
+        :MCI-MEP-GF-0080 ;
+    :hasTaskTime :TT-MEP-GF-0080 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-EL_452fe,
+        :RS-HL_58c63,
+        :RS-PL_23c36 .
+
+:TA-MEP-GF-0090 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-MEP-GF-0090"^^xsd:string ;
+    :IsCritical false ;
+    :Name "MEP Final Fix in Wall Section"^^xsd:string ;
+    :hasCostItem :ECI-MEP-GF-0090,
+        :LCI-MEP-GF-0090,
+        :MCI-MEP-GF-0090 ;
+    :hasTaskTime :TT-MEP-GF-0090 ;
+    :hasWorkStatus :STARTED ;
+    :requiresResource :RS-EL_7b1d7,
+        :RS-HL_deb04,
+        :RS-PL_b6797 .
+
+:TA-PRO-FN-0010 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-FN-0010"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Partitions Gypsum Boards"^^xsd:string ;
+    :hasCostItem :ECI-PRO-FN-0010,
+        :LCI-PRO-FN-0010,
+        :MCI-PRO-FN-0010 ;
+    :hasTaskTime :TT-PRO-FN-0010 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-FN-0020 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-FN-0020"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Aluminum Works Windows, Doors "^^xsd:string ;
+    :hasCostItem :ECI-PRO-FN-0020,
+        :LCI-PRO-FN-0020,
+        :MCI-PRO-FN-0020 ;
+    :hasTaskTime :TT-PRO-FN-0020 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-FN-0030 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-FN-0030"^^xsd:string ;
+    :IsCritical false ;
+    :Name "hollow block and Brick"^^xsd:string ;
+    :hasCostItem :ECI-PRO-FN-0030,
+        :LCI-PRO-FN-0030,
+        :MCI-PRO-FN-0030 ;
+    :hasTaskTime :TT-PRO-FN-0030 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-FN-0040 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-FN-0040"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Passenger and Services Lift"^^xsd:string ;
+    :hasCostItem :ECI-PRO-FN-0040,
+        :LCI-PRO-FN-0040,
+        :MCI-PRO-FN-0040 ;
+    :hasTaskTime :TT-PRO-FN-0040 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-FN-0050 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-FN-0050"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Wood Doors"^^xsd:string ;
+    :hasCostItem :ECI-PRO-FN-0050,
+        :LCI-PRO-FN-0050,
+        :MCI-PRO-FN-0050 ;
+    :hasTaskTime :TT-PRO-FN-0050 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-FN-0060 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-FN-0060"^^xsd:string ;
+    :IsCritical false ;
+    :Name " Plastering Accessories"^^xsd:string ;
+    :hasCostItem :ECI-PRO-FN-0060,
+        :LCI-PRO-FN-0060,
+        :MCI-PRO-FN-0060 ;
+    :hasTaskTime :TT-PRO-FN-0060 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-FN-0070 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-FN-0070"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Ceramic and Porcelain Tiles"^^xsd:string ;
+    :hasCostItem :ECI-PRO-FN-0070,
+        :LCI-PRO-FN-0070,
+        :MCI-PRO-FN-0070 ;
+    :hasTaskTime :TT-PRO-FN-0070 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-FN-0080 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-FN-0080"^^xsd:string ;
+    :IsCritical false ;
+    :Name "False Ceiling Works"^^xsd:string ;
+    :hasCostItem :ECI-PRO-FN-0080,
+        :LCI-PRO-FN-0080,
+        :MCI-PRO-FN-0080 ;
+    :hasTaskTime :TT-PRO-FN-0080 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-FN-0090 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-FN-0090"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Painting"^^xsd:string ;
+    :hasCostItem :ECI-PRO-FN-0090,
+        :LCI-PRO-FN-0090,
+        :MCI-PRO-FN-0090 ;
+    :hasTaskTime :TT-PRO-FN-0090 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-FN-0100 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-FN-0100"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Furniture"^^xsd:string ;
+    :hasCostItem :ECI-PRO-FN-0100,
+        :LCI-PRO-FN-0100,
+        :MCI-PRO-FN-0100 ;
+    :hasTaskTime :TT-PRO-FN-0100 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-MEP-0010 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-MEP-0010"^^xsd:string ;
+    :IsCritical false ;
+    :Name " DRAINAGE"^^xsd:string ;
+    :hasCostItem :ECI-PRO-MEP-0010,
+        :LCI-PRO-MEP-0010,
+        :MCI-PRO-MEP-0010 ;
+    :hasTaskTime :TT-PRO-MEP-0010 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-MEP-0020 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-MEP-0020"^^xsd:string ;
+    :IsCritical false ;
+    :Name " PLUMBING"^^xsd:string ;
+    :hasCostItem :ECI-PRO-MEP-0020,
+        :LCI-PRO-MEP-0020,
+        :MCI-PRO-MEP-0020 ;
+    :hasTaskTime :TT-PRO-MEP-0020 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-MEP-0030 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-MEP-0030"^^xsd:string ;
+    :IsCritical false ;
+    :Name "FIRE FIGHTING"^^xsd:string ;
+    :hasCostItem :ECI-PRO-MEP-0030,
+        :LCI-PRO-MEP-0030,
+        :MCI-PRO-MEP-0030 ;
+    :hasTaskTime :TT-PRO-MEP-0030 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-MEP-0040 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-MEP-0040"^^xsd:string ;
+    :IsCritical false ;
+    :Name " HVAC "^^xsd:string ;
+    :hasCostItem :ECI-PRO-MEP-0040,
+        :LCI-PRO-MEP-0040,
+        :MCI-PRO-MEP-0040 ;
+    :hasTaskTime :TT-PRO-MEP-0040 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-MEP-0050 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-MEP-0050"^^xsd:string ;
+    :IsCritical false ;
+    :Name "FULE SYSTEM (GENERATOR)"^^xsd:string ;
+    :hasCostItem :ECI-PRO-MEP-0050,
+        :LCI-PRO-MEP-0050,
+        :MCI-PRO-MEP-0050 ;
+    :hasTaskTime :TT-PRO-MEP-0050 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-MEP-0060 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-MEP-0060"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Power & Lighting"^^xsd:string ;
+    :hasCostItem :ECI-PRO-MEP-0060,
+        :LCI-PRO-MEP-0060,
+        :MCI-PRO-MEP-0060 ;
+    :hasTaskTime :TT-PRO-MEP-0060 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-MEP-0070 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-MEP-0070"^^xsd:string ;
+    :IsCritical false ;
+    :Name "ELV Systems"^^xsd:string ;
+    :hasCostItem :ECI-PRO-MEP-0070,
+        :LCI-PRO-MEP-0070,
+        :MCI-PRO-MEP-0070 ;
+    :hasTaskTime :TT-PRO-MEP-0070 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-ST-0010 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-ST-0010"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Cement"^^xsd:string ;
+    :hasCostItem :ECI-PRO-ST-0010,
+        :LCI-PRO-ST-0010,
+        :MCI-PRO-ST-0010 ;
+    :hasTaskTime :TT-PRO-ST-0010 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-ST-0020 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-ST-0020"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Ready Mix Concrete"^^xsd:string ;
+    :hasCostItem :ECI-PRO-ST-0020,
+        :LCI-PRO-ST-0020,
+        :MCI-PRO-ST-0020 ;
+    :hasTaskTime :TT-PRO-ST-0020 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-ST-0030 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-ST-0030"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Reinforcement Steel"^^xsd:string ;
+    :hasCostItem :ECI-PRO-ST-0030,
+        :LCI-PRO-ST-0030,
+        :MCI-PRO-ST-0030 ;
+    :hasTaskTime :TT-PRO-ST-0030 ;
+    :hasWorkStatus :STARTED .
+
+:TA-PRO-ST-0040 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-ST-0040"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Plastic Spacer"^^xsd:string ;
+    :hasCostItem :ECI-PRO-ST-0040,
+        :LCI-PRO-ST-0040,
+        :MCI-PRO-ST-0040 ;
+    :hasTaskTime :TT-PRO-ST-0040 ;
+    :hasWorkStatus :COMPLETED .
+
+:TA-PRO-ST-0050 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-ST-0050"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Damp Proofing Under Ground"^^xsd:string ;
+    :hasCostItem :ECI-PRO-ST-0050,
+        :LCI-PRO-ST-0050,
+        :MCI-PRO-ST-0050 ;
+    :hasTaskTime :TT-PRO-ST-0050 ;
+    :hasWorkStatus :COMPLETED .
+
+:TA-PRO-ST-0060 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-ST-0060"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Water proofing _internal"^^xsd:string ;
+    :hasCostItem :ECI-PRO-ST-0060,
+        :LCI-PRO-ST-0060,
+        :MCI-PRO-ST-0060 ;
+    :hasTaskTime :TT-PRO-ST-0060 ;
+    :hasWorkStatus :COMPLETED .
+
+:TA-PRO-ST-0070 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-ST-0070"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Water proofing _external"^^xsd:string ;
+    :hasCostItem :ECI-PRO-ST-0070,
+        :LCI-PRO-ST-0070,
+        :MCI-PRO-ST-0070 ;
+    :hasTaskTime :TT-PRO-ST-0070 ;
+    :hasWorkStatus :COMPLETED .
+
+:TA-PRO-ST-0080 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-PRO-ST-0080"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Thermal Insulation for top roof"^^xsd:string ;
+    :hasCostItem :ECI-PRO-ST-0080,
+        :LCI-PRO-ST-0080,
+        :MCI-PRO-ST-0080 ;
+    :hasTaskTime :TT-PRO-ST-0080 ;
+    :hasWorkStatus :COMPLETED .
+
+:TA-ST-01-0010 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0010"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Slab and Beam Formwork"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0010,
+        :LCI-ST-01-0010,
+        :MCI-ST-01-0010 ;
+    :hasTaskTime :TT-ST-01-0010 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CR_2d35c,
+        :RS-FW_633ba,
+        :RS-HL_91eaf .
+
+:TA-ST-01-0020 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0020"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Slab and Beam Steel Reinforcement"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0020,
+        :LCI-ST-01-0020,
+        :MCI-ST-01-0020 ;
+    :hasTaskTime :TT-ST-01-0020 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-BW_15ad3,
+        :RS-HL_a3886,
+        :RS-IW_45dd5 .
+
+:TA-ST-01-0030 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0030"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Slab and Beam Concrete Casting"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0030,
+        :LCI-ST-01-0030,
+        :MCI-ST-01-0030 ;
+    :hasTaskTime :TT-ST-01-0030 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CC_8ef07,
+        :RS-CM_673b2,
+        :RS-CP_2b86d,
+        :RS-CV_d0b3f,
+        :RS-HL_6be6a .
+
+:TA-ST-01-0040 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0040"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Slab and Beam Curring"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0040,
+        :LCI-ST-01-0040,
+        :MCI-ST-01-0040 ;
+    :hasTaskTime :TT-ST-01-0040 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-HL_31d30 .
+
+:TA-ST-01-0050 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0050"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Slab and Beam Deshuttering"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0050,
+        :LCI-ST-01-0050,
+        :MCI-ST-01-0050 ;
+    :hasTaskTime :TT-ST-01-0050 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CR_dddd0,
+        :RS-HL_ef3a0 .
+
+:TA-ST-01-0060 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0060"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Column Steel Reinforcement"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0060,
+        :LCI-ST-01-0060,
+        :MCI-ST-01-0060 ;
+    :hasTaskTime :TT-ST-01-0060 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-BW_911f8,
+        :RS-HL_30697,
+        :RS-IW_33493,
+        :RS-ST_fbdf9 .
+
+:TA-ST-01-0070 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0070"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Column Formwork"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0070,
+        :LCI-ST-01-0070,
+        :MCI-ST-01-0070 ;
+    :hasTaskTime :TT-ST-01-0070 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CR_1af3e,
+        :RS-FW_1306d,
+        :RS-HL_2a4ac .
+
+:TA-ST-01-0080 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0080"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Column Concrete Casting"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0080,
+        :LCI-ST-01-0080,
+        :MCI-ST-01-0080 ;
+    :hasTaskTime :TT-ST-01-0080 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CC_952b5,
+        :RS-CM_704a0,
+        :RS-CP_ec1af,
+        :RS-CV_ba16c,
+        :RS-HL_5199c .
+
+:TA-ST-01-0090 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0090"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Column Curring "^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0090,
+        :LCI-ST-01-0090,
+        :MCI-ST-01-0090 ;
+    :hasTaskTime :TT-ST-01-0090 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CR_4a607,
+        :RS-HL_60483 .
+
+:TA-ST-01-0100 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0100"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Column Deshuttering"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0100,
+        :LCI-ST-01-0100,
+        :MCI-ST-01-0100 ;
+    :hasTaskTime :TT-ST-01-0100 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CR_4e960,
+        :RS-HL_b7d0d .
+
+:TA-ST-01-0110 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0110"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Core wall  Steel Reinforcement"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0110,
+        :LCI-ST-01-0110,
+        :MCI-ST-01-0110 ;
+    :hasTaskTime :TT-ST-01-0110 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-BW_14e1e,
+        :RS-HL_6c9d8,
+        :RS-IW_739ec,
+        :RS-ST_26010 .
+
+:TA-ST-01-0120 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0120"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Core wall  Formwork "^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0120,
+        :LCI-ST-01-0120,
+        :MCI-ST-01-0120 ;
+    :hasTaskTime :TT-ST-01-0120 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CR_2f5fe,
+        :RS-FW_ef307,
+        :RS-HL_c8019 .
+
+:TA-ST-01-0130 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0130"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Core wall  Concrete Casting"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0130,
+        :LCI-ST-01-0130,
+        :MCI-ST-01-0130 ;
+    :hasTaskTime :TT-ST-01-0130 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CC_8d21e,
+        :RS-CM_b178c,
+        :RS-CP_f68bd,
+        :RS-CV_3cf5a,
+        :RS-HL_3baa8 .
+
+:TA-ST-01-0140 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0140"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Core wall Curring"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0140,
+        :LCI-ST-01-0140,
+        :MCI-ST-01-0140 ;
+    :hasTaskTime :TT-ST-01-0140 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CR_88f48,
+        :RS-HL_93dd3 .
+
+:TA-ST-01-0150 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0150"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Core wall Deshuttering"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0150,
+        :LCI-ST-01-0150,
+        :MCI-ST-01-0150 ;
+    :hasTaskTime :TT-ST-01-0150 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CR_e76ae,
+        :RS-HL_c6268 .
+
+:TA-ST-01-0160 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0160"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Stair Formwork"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0160,
+        :LCI-ST-01-0160,
+        :MCI-ST-01-0160 ;
+    :hasTaskTime :TT-ST-01-0160 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CR_76ca5,
+        :RS-FW_bfa29,
+        :RS-HL_c2bb1 .
+
+:TA-ST-01-0170 a :Task,
+        owl:NamedIndividual ;
+    :DelayReason "Unforeseen Site Conditions" ;
+    :Id "TA-ST-01-0170"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Stair Steel Reinforcement"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0170,
+        :LCI-ST-01-0170,
+        :MCI-ST-01-0170 ;
+    :hasTaskTime :TT-ST-01-0170 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-BW_6291d,
+        :RS-HL_be89d,
+        :RS-IW_3ef0a,
+        :RS-ST_1a609 .
+
+:TA-ST-01-0180 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0180"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Stair Concrete Casting"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0180,
+        :LCI-ST-01-0180,
+        :MCI-ST-01-0180 ;
+    :hasTaskTime :TT-ST-01-0180 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CC_f282e,
+        :RS-CM_3222a,
+        :RS-CP_95652,
+        :RS-CV_b03d8,
+        :RS-HL_7463f .
+
+:TA-ST-01-0190 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0190"^^xsd:string ;
+    :IsCritical false ;
+    :Name "StairCurring"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0190,
+        :LCI-ST-01-0190,
+        :MCI-ST-01-0190 ;
+    :hasTaskTime :TT-ST-01-0190 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CR_37a1e,
+        :RS-HL_13e3c .
+
+:TA-ST-01-0200 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-01-0200"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Stair Deshuttering"^^xsd:string ;
+    :hasCostItem :ECI-ST-01-0200,
+        :LCI-ST-01-0200,
+        :MCI-ST-01-0200 ;
+    :hasTaskTime :TT-ST-01-0200 ;
+    :hasWorkStatus :NOTSTARTED ;
+    :requiresResource :RS-CR_e2d0a,
+        :RS-HL_98ca8 .
+
+:TA-ST-FL-0010 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-FL-0010"^^xsd:string ;
+    :IsCritical false ;
+    :Name "Foundation Steel Reinforcement"^^xsd:string ;
+    :hasCostItem :ECI-ST-FL-0010,
+        :LCI-ST-FL-0010,
+        :MCI-ST-FL-0010 ;
+    :hasTaskTime :TT-ST-FL-0010 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-BW_f993d,
+        :RS-HL_99382,
+        :RS-IW_99beb,
+        :RS-ST_bca0b .
+
+:TA-ST-FL-0020 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-FL-0020"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Foundation Formwork"^^xsd:string ;
+    :hasCostItem :ECI-ST-FL-0020,
+        :LCI-ST-FL-0020,
+        :MCI-ST-FL-0020 ;
+    :hasTaskTime :TT-ST-FL-0020 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CR_3bf01,
+        :RS-FW_e320a,
+        :RS-HL_e7fdd .
+
+:TA-ST-FL-0030 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-FL-0030"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Fouundation Concrete Casting"^^xsd:string ;
+    :hasCostItem :ECI-ST-FL-0030,
+        :LCI-ST-FL-0030,
+        :MCI-ST-FL-0030 ;
+    :hasTaskTime :TT-ST-FL-0030 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CC_742c2,
+        :RS-CM_62852,
+        :RS-CP_b13a5,
+        :RS-CV_4c494,
+        :RS-HL_829f5 .
+
+:TA-ST-FL-0040 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-FL-0040"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Foundation Curring and Deshuttering"^^xsd:string ;
+    :hasCostItem :ECI-ST-FL-0040,
+        :LCI-ST-FL-0040,
+        :MCI-ST-FL-0040 ;
+    :hasTaskTime :TT-ST-FL-0040 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CR_044cc,
+        :RS-HL_3b6d3 .
+
+:TA-ST-GF-0010 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-GF-0010"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Slab and Beam Formwork"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0010,
+        :LCI-ST-GF-0010,
+        :MCI-ST-GF-0010 ;
+    :hasTaskTime :TT-ST-GF-0010 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CR_6de41,
+        :RS-FW_8b30e,
+        :RS-HL_5adb6 .
+
+:TA-ST-GF-0020 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-GF-0020"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Slab and Beam Steel Reinforcement"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0020,
+        :LCI-ST-GF-0020,
+        :MCI-ST-GF-0020 ;
+    :hasTaskTime :TT-ST-GF-0020 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-BW_0cf22,
+        :RS-HL_c0c97,
+        :RS-IW_e6615 .
+
+:TA-ST-GF-0030 a :Task,
+        owl:NamedIndividual ;
+    :DelayReason "Unforeseen Site Conditions" ;
+    :Id "TA-ST-GF-0030"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Slab and Beam Concrete Casting"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0030,
+        :LCI-ST-GF-0030,
+        :MCI-ST-GF-0030 ;
+    :hasTaskTime :TT-ST-GF-0030 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CC_4f63b,
+        :RS-CM_28df6,
+        :RS-CP_f3183,
+        :RS-CV_848be,
+        :RS-HL_cfca1 .
+
+:TA-ST-GF-0040 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-GF-0040"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Slab and Beam Curring"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0040,
+        :LCI-ST-GF-0040,
+        :MCI-ST-GF-0040 ;
+    :hasTaskTime :TT-ST-GF-0040 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-HL_7b6c1 .
+
+:TA-ST-GF-0050 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-GF-0050"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Slab and Beam Deshuttering"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0050,
+        :LCI-ST-GF-0050,
+        :MCI-ST-GF-0050 ;
+    :hasTaskTime :TT-ST-GF-0050 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CR_51c58,
+        :RS-HL_b5ff2 .
+
+:TA-ST-GF-0060 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-GF-0060"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Column Steel Reinforcement"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0060,
+        :LCI-ST-GF-0060,
+        :MCI-ST-GF-0060 ;
+    :hasTaskTime :TT-ST-GF-0060 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-BW_25086,
+        :RS-HL_6087b,
+        :RS-IW_65ab2,
+        :RS-ST_bc061 .
+
+:TA-ST-GF-0070 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-GF-0070"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Column Formwork"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0070,
+        :LCI-ST-GF-0070,
+        :MCI-ST-GF-0070 ;
+    :hasTaskTime :TT-ST-GF-0070 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CR_b9f7f,
+        :RS-FW_58b23,
+        :RS-HL_f0c47 .
+
+:TA-ST-GF-0080 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-GF-0080"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Column Concrete Casting"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0080,
+        :LCI-ST-GF-0080,
+        :MCI-ST-GF-0080 ;
+    :hasTaskTime :TT-ST-GF-0080 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CC_2748a,
+        :RS-CM_70f29,
+        :RS-CP_fef22,
+        :RS-CV_80ded,
+        :RS-HL_3cdf6 .
+
+:TA-ST-GF-0090 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-GF-0090"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Column Curring "^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0090,
+        :LCI-ST-GF-0090,
+        :MCI-ST-GF-0090 ;
+    :hasTaskTime :TT-ST-GF-0090 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CR_f0607,
+        :RS-HL_bf8d6 .
+
+:TA-ST-GF-0100 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-GF-0100"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Column Deshuttering"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0100,
+        :LCI-ST-GF-0100,
+        :MCI-ST-GF-0100 ;
+    :hasTaskTime :TT-ST-GF-0100 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CR_9f097,
+        :RS-HL_86312 .
+
+:TA-ST-GF-0110 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-GF-0110"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Core wall  Steel Reinforcement"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0110,
+        :LCI-ST-GF-0110,
+        :MCI-ST-GF-0110 ;
+    :hasTaskTime :TT-ST-GF-0110 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-BW_85b4b,
+        :RS-HL_ed948,
+        :RS-IW_31b05,
+        :RS-ST_ff109 .
+
+:TA-ST-GF-0120 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-GF-0120"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Core wall  Formwork "^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0120,
+        :LCI-ST-GF-0120,
+        :MCI-ST-GF-0120 ;
+    :hasTaskTime :TT-ST-GF-0120 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CR_b99de,
+        :RS-FW_16ea1,
+        :RS-HL_e6689 .
+
+:TA-ST-GF-0130 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-GF-0130"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Core wall  Concrete Casting"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0130,
+        :LCI-ST-GF-0130,
+        :MCI-ST-GF-0130 ;
+    :hasTaskTime :TT-ST-GF-0130 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CC_834a7,
+        :RS-CM_d427b,
+        :RS-CP_e4179,
+        :RS-CV_a0930,
+        :RS-HL_2e6af .
+
+:TA-ST-GF-0140 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-GF-0140"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Core wall Curring"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0140,
+        :LCI-ST-GF-0140,
+        :MCI-ST-GF-0140 ;
+    :hasTaskTime :TT-ST-GF-0140 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CR_8536f,
+        :RS-HL_ac41c .
+
+:TA-ST-GF-0150 a :Task,
+        owl:NamedIndividual ;
+    :DelayReason "Unforeseen Site Conditions" ;
+    :Id "TA-ST-GF-0150"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Core wall Deshuttering"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0150,
+        :LCI-ST-GF-0150,
+        :MCI-ST-GF-0150 ;
+    :hasTaskTime :TT-ST-GF-0150 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CR_e59cd,
+        :RS-HL_c7d03 .
+
+:TA-ST-GF-0160 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-GF-0160"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Stair Formwork"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0160,
+        :LCI-ST-GF-0160,
+        :MCI-ST-GF-0160 ;
+    :hasTaskTime :TT-ST-GF-0160 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CR_50461,
+        :RS-FW_13b53,
+        :RS-HL_d3a66 .
+
+:TA-ST-GF-0170 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-GF-0170"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Stair Steel Reinforcement"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0170,
+        :LCI-ST-GF-0170,
+        :MCI-ST-GF-0170 ;
+    :hasTaskTime :TT-ST-GF-0170 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-BW_509b9,
+        :RS-HL_6edd3,
+        :RS-IW_eb0ba,
+        :RS-ST_47996 .
+
+:TA-ST-GF-0180 a :Task,
+        owl:NamedIndividual ;
+    :DelayReason "Safety Incidents" ;
+    :Id "TA-ST-GF-0180"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Stair Concrete Casting"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0180,
+        :LCI-ST-GF-0180,
+        :MCI-ST-GF-0180 ;
+    :hasTaskTime :TT-ST-GF-0180 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CC_af4fb,
+        :RS-CM_f4cc3,
+        :RS-CP_ef92e,
+        :RS-CV_b9be0,
+        :RS-HL_8ce75 .
+
+:TA-ST-GF-0190 a :Task,
+        owl:NamedIndividual ;
+    :Id "TA-ST-GF-0190"^^xsd:string ;
+    :IsCritical true ;
+    :Name "StairCurring"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0190,
+        :LCI-ST-GF-0190,
+        :MCI-ST-GF-0190 ;
+    :hasTaskTime :TT-ST-GF-0190 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CR_a200e,
+        :RS-HL_9ce3b .
+
+:TA-ST-GF-0200 a :Task,
+        owl:NamedIndividual ;
+    :DelayReason "Safety Incidents" ;
+    :Id "TA-ST-GF-0200"^^xsd:string ;
+    :IsCritical true ;
+    :Name "Stair Deshuttering"^^xsd:string ;
+    :hasCostItem :ECI-ST-GF-0200,
+        :LCI-ST-GF-0200,
+        :MCI-ST-GF-0200 ;
+    :hasTaskTime :TT-ST-GF-0200 ;
+    :hasWorkStatus :COMPLETED ;
+    :requiresResource :RS-CR_72e14,
+        :RS-HL_e93cf .
+
+:TT-ENG-DR-0010 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 14.0 ;
+    :ActualFinish "12-08-2023"^^xsd:string ;
+    :ActualStart "30-07-2023"^^xsd:string ;
+    :ScheduleDuration 14.0 ;
+    :ScheduleFinish "12-08-2023"^^xsd:string ;
+    :ScheduleStart "30-07-2023"^^xsd:string .
+
+:TT-ENG-DR-0020 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 14.0 ;
+    :ActualFinish "12-08-2023"^^xsd:string ;
+    :ActualStart "30-07-2023"^^xsd:string ;
+    :ScheduleDuration 14.0 ;
+    :ScheduleFinish "12-08-2023"^^xsd:string ;
+    :ScheduleStart "30-07-2023"^^xsd:string .
+
+:TT-ENG-DR-0030 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 4.0 ;
+    :ActualFinish "16-08-2023"^^xsd:string ;
+    :ActualStart "13-08-2023"^^xsd:string ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "16-08-2023"^^xsd:string ;
+    :ScheduleStart "13-08-2023"^^xsd:string .
+
+:TT-ENG-DR-0040 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 7.0 ;
+    :ActualFinish "19-08-2023"^^xsd:string ;
+    :ActualStart "13-08-2023"^^xsd:string ;
+    :ScheduleDuration 7.0 ;
+    :ScheduleFinish "19-08-2023"^^xsd:string ;
+    :ScheduleStart "13-08-2023"^^xsd:string .
+
+:TT-FN-01-0010 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 14.0 ;
+    :ScheduleFinish "24-12-2023"^^xsd:string ;
+    :ScheduleStart "11-12-2023"^^xsd:string .
+
+:TT-FN-01-0020 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 2.0 ;
+    :ScheduleFinish "26-12-2023"^^xsd:string ;
+    :ScheduleStart "25-12-2023"^^xsd:string .
+
+:TT-FN-01-0030 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "30-12-2023"^^xsd:string ;
+    :ScheduleStart "27-12-2023"^^xsd:string .
+
+:TT-FN-01-0040 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 3.0 ;
+    :ScheduleFinish "02-01-2024"^^xsd:string ;
+    :ScheduleStart "31-12-2023"^^xsd:string .
+
+:TT-FN-01-0050 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "06-01-2024"^^xsd:string ;
+    :ScheduleStart "03-01-2024"^^xsd:string .
+
+:TT-FN-01-0060 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 7.0 ;
+    :ScheduleFinish "13-01-2024"^^xsd:string ;
+    :ScheduleStart "07-01-2024"^^xsd:string .
+
+:TT-FN-01-0070 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 8.0 ;
+    :ScheduleFinish "21-01-2024"^^xsd:string ;
+    :ScheduleStart "14-01-2024"^^xsd:string .
+
+:TT-FN-01-0080 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 6.0 ;
+    :ScheduleFinish "27-01-2024"^^xsd:string ;
+    :ScheduleStart "22-01-2024"^^xsd:string .
+
+:TT-FN-01-0090 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 3.0 ;
+    :ScheduleFinish "30-01-2024"^^xsd:string ;
+    :ScheduleStart "28-01-2024"^^xsd:string .
+
+:TT-FN-01-0100 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "03-02-2024"^^xsd:string ;
+    :ScheduleStart "31-01-2024"^^xsd:string .
+
+:TT-FN-01-0110 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 3.0 ;
+    :ScheduleFinish "06-02-2024"^^xsd:string ;
+    :ScheduleStart "04-02-2024"^^xsd:string .
+
+:TT-FN-01-0120 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "10-02-2024"^^xsd:string ;
+    :ScheduleStart "07-02-2024"^^xsd:string .
+
+:TT-FN-01-0130 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 10.0 ;
+    :ScheduleFinish "20-02-2024"^^xsd:string ;
+    :ScheduleStart "11-02-2024"^^xsd:string .
+
+:TT-FN-01-0140 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 7.0 ;
+    :ScheduleFinish "27-02-2024"^^xsd:string ;
+    :ScheduleStart "21-02-2024"^^xsd:string .
+
+:TT-FN-GF-0010 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 15.0 ;
+    :ActualFinish "06-10-2023"^^xsd:string ;
+    :ActualStart "22-09-2023"^^xsd:string ;
+    :ScheduleDuration 14.0 ;
+    :ScheduleFinish "01-10-2023"^^xsd:string ;
+    :ScheduleStart "18-09-2023"^^xsd:string .
+
+:TT-FN-GF-0020 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 7.0 ;
+    :ActualFinish "10-10-2023"^^xsd:string ;
+    :ActualStart "04-10-2023"^^xsd:string ;
+    :ScheduleDuration 2.0 ;
+    :ScheduleFinish "03-10-2023"^^xsd:string ;
+    :ScheduleStart "02-10-2023"^^xsd:string .
+
+:TT-FN-GF-0030 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 2.0 ;
+    :ActualFinish "08-10-2023"^^xsd:string ;
+    :ActualStart "07-10-2023"^^xsd:string ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "07-10-2023"^^xsd:string ;
+    :ScheduleStart "04-10-2023"^^xsd:string .
+
+:TT-FN-GF-0040 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 12.0 ;
+    :ActualFinish "21-10-2023"^^xsd:string ;
+    :ActualStart "10-10-2023"^^xsd:string ;
+    :ScheduleDuration 3.0 ;
+    :ScheduleFinish "10-10-2023"^^xsd:string ;
+    :ScheduleStart "08-10-2023"^^xsd:string .
+
+:TT-FN-GF-0050 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 8.0 ;
+    :ActualFinish "21-10-2023"^^xsd:string ;
+    :ActualStart "14-10-2023"^^xsd:string ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "14-10-2023"^^xsd:string ;
+    :ScheduleStart "11-10-2023"^^xsd:string .
+
+:TT-FN-GF-0060 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 12.0 ;
+    :ActualFinish "30-10-2023"^^xsd:string ;
+    :ActualStart "19-10-2023"^^xsd:string ;
+    :ScheduleDuration 7.0 ;
+    :ScheduleFinish "21-10-2023"^^xsd:string ;
+    :ScheduleStart "15-10-2023"^^xsd:string .
+
+:TT-FN-GF-0070 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 2.0 ;
+    :ActualFinish "28-10-2023"^^xsd:string ;
+    :ActualStart "27-10-2023"^^xsd:string ;
+    :ScheduleDuration 8.0 ;
+    :ScheduleFinish "29-10-2023"^^xsd:string ;
+    :ScheduleStart "22-10-2023"^^xsd:string .
+
+:TT-FN-GF-0080 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 0.0 ;
+    :ActualFinish "03-11-2023"^^xsd:string ;
+    :ActualStart "04-11-2023"^^xsd:string ;
+    :ScheduleDuration 6.0 ;
+    :ScheduleFinish "04-11-2023"^^xsd:string ;
+    :ScheduleStart "30-10-2023"^^xsd:string .
+
+:TT-FN-GF-0090 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 2.0 ;
+    :ActualFinish "10-11-2023"^^xsd:string ;
+    :ActualStart "09-11-2023"^^xsd:string ;
+    :ScheduleDuration 3.0 ;
+    :ScheduleFinish "07-11-2023"^^xsd:string ;
+    :ScheduleStart "05-11-2023"^^xsd:string .
+
+:TT-FN-GF-0100 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 7.0 ;
+    :ActualFinish "14-11-2023"^^xsd:string ;
+    :ActualStart "08-11-2023"^^xsd:string ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "11-11-2023"^^xsd:string ;
+    :ScheduleStart "08-11-2023"^^xsd:string .
+
+:TT-FN-GF-0110 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 1.0 ;
+    :ActualFinish "15-11-2023"^^xsd:string ;
+    :ActualStart "15-11-2023"^^xsd:string ;
+    :ScheduleDuration 3.0 ;
+    :ScheduleFinish "14-11-2023"^^xsd:string ;
+    :ScheduleStart "12-11-2023"^^xsd:string .
+
+:TT-FN-GF-0120 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 2.0 ;
+    :ActualFinish "17-11-2023"^^xsd:string ;
+    :ActualStart "16-11-2023"^^xsd:string ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "18-11-2023"^^xsd:string ;
+    :ScheduleStart "15-11-2023"^^xsd:string .
+
+:TT-FN-GF-0130 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 13.0 ;
+    :ActualFinish "05-12-2023"^^xsd:string ;
+    :ActualStart "23-11-2023"^^xsd:string ;
+    :ScheduleDuration 10.0 ;
+    :ScheduleFinish "28-11-2023"^^xsd:string ;
+    :ScheduleStart "19-11-2023"^^xsd:string .
+
+:TT-FN-GF-0140 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 12.0 ;
+    :ActualFinish "14-12-2023"^^xsd:string ;
+    :ActualStart "03-12-2023"^^xsd:string ;
+    :ScheduleDuration 7.0 ;
+    :ScheduleFinish "05-12-2023"^^xsd:string ;
+    :ScheduleStart "29-11-2023"^^xsd:string .
+
+:TT-GEN-ML-0010 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualStart "30-07-2023"^^xsd:string ;
+    :ScheduleStart "30-07-2023"^^xsd:string .
+
+:TT-GEN-ML-0020 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualStart "30-07-2023"^^xsd:string ;
+    :ScheduleStart "30-07-2023"^^xsd:string .
+
+:TT-GEN-ML-0030 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualStart "13-08-2023"^^xsd:string ;
+    :ScheduleStart "13-08-2023"^^xsd:string .
+
+:TT-GEN-ML-0040 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualStart "30-07-2023"^^xsd:string ;
+    :ScheduleStart "30-07-2023"^^xsd:string .
+
+:TT-GEN-ML-0050 a :TaskTime,
+        owl:NamedIndividual .
+
+:TT-GEN-ML-0060 a :TaskTime,
+        owl:NamedIndividual .
+
+:TT-MEP-01-0010 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 9.0 ;
+    :ScheduleFinish "07-03-2024"^^xsd:string ;
+    :ScheduleStart "28-02-2024"^^xsd:string .
+
+:TT-MEP-01-0020 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "13-03-2024"^^xsd:string ;
+    :ScheduleStart "10-03-2024"^^xsd:string .
+
+:TT-MEP-01-0030 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "17-03-2024"^^xsd:string ;
+    :ScheduleStart "14-03-2024"^^xsd:string .
+
+:TT-MEP-01-0040 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 3.0 ;
+    :ScheduleFinish "20-03-2024"^^xsd:string ;
+    :ScheduleStart "18-03-2024"^^xsd:string .
+
+:TT-MEP-01-0050 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 7.0 ;
+    :ScheduleFinish "27-03-2024"^^xsd:string ;
+    :ScheduleStart "21-03-2024"^^xsd:string .
+
+:TT-MEP-01-0060 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 7.0 ;
+    :ScheduleFinish "03-04-2024"^^xsd:string ;
+    :ScheduleStart "28-03-2024"^^xsd:string .
+
+:TT-MEP-01-0070 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 5.0 ;
+    :ScheduleFinish "08-04-2024"^^xsd:string ;
+    :ScheduleStart "04-04-2024"^^xsd:string .
+
+:TT-MEP-01-0080 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 3.0 ;
+    :ScheduleFinish "11-04-2024"^^xsd:string ;
+    :ScheduleStart "09-04-2024"^^xsd:string .
+
+:TT-MEP-01-0090 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "17-04-2024"^^xsd:string ;
+    :ScheduleStart "14-04-2024"^^xsd:string .
+
+:TT-MEP-FL-0040 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 6.0 ;
+    :ActualFinish "27-08-2023"^^xsd:string ;
+    :ActualStart "22-08-2023"^^xsd:string ;
+    :ScheduleDuration 7.0 ;
+    :ScheduleFinish "26-08-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-MEP-GF-0010 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 10.0 ;
+    :ActualFinish "16-12-2023"^^xsd:string ;
+    :ActualStart "07-12-2023"^^xsd:string ;
+    :ScheduleDuration 8.0 ;
+    :ScheduleFinish "13-12-2023"^^xsd:string ;
+    :ScheduleStart "06-12-2023"^^xsd:string .
+
+:TT-MEP-GF-0020 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 15.0 ;
+    :ActualFinish "30-12-2023"^^xsd:string ;
+    :ActualStart "16-12-2023"^^xsd:string ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "19-12-2023"^^xsd:string ;
+    :ScheduleStart "16-12-2023"^^xsd:string .
+
+:TT-MEP-GF-0030 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 3.0 ;
+    :ActualFinish "22-12-2023"^^xsd:string ;
+    :ActualStart "20-12-2023"^^xsd:string ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "23-12-2023"^^xsd:string ;
+    :ScheduleStart "20-12-2023"^^xsd:string .
+
+:TT-MEP-GF-0040 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 2.0 ;
+    :ActualFinish "29-12-2023"^^xsd:string ;
+    :ActualStart "28-12-2023"^^xsd:string ;
+    :ScheduleDuration 3.0 ;
+    :ScheduleFinish "26-12-2023"^^xsd:string ;
+    :ScheduleStart "24-12-2023"^^xsd:string .
+
+:TT-MEP-GF-0050 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 8.0 ;
+    :ActualFinish "03-01-2024"^^xsd:string ;
+    :ActualStart "27-12-2023"^^xsd:string ;
+    :ScheduleDuration 7.0 ;
+    :ScheduleFinish "02-01-2024"^^xsd:string ;
+    :ScheduleStart "27-12-2023"^^xsd:string .
+
+:TT-MEP-GF-0060 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 9.0 ;
+    :ActualFinish "12-01-2024"^^xsd:string ;
+    :ActualStart "04-01-2024"^^xsd:string ;
+    :ScheduleDuration 7.0 ;
+    :ScheduleFinish "09-01-2024"^^xsd:string ;
+    :ScheduleStart "03-01-2024"^^xsd:string .
+
+:TT-MEP-GF-0070 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 6.0 ;
+    :ActualFinish "15-01-2024"^^xsd:string ;
+    :ActualStart "10-01-2024"^^xsd:string ;
+    :ScheduleDuration 5.0 ;
+    :ScheduleFinish "14-01-2024"^^xsd:string ;
+    :ScheduleStart "10-01-2024"^^xsd:string .
+
+:TT-MEP-GF-0080 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 5.0 ;
+    :ActualFinish "22-01-2024"^^xsd:string ;
+    :ActualStart "18-01-2024"^^xsd:string ;
+    :ScheduleDuration 3.0 ;
+    :ScheduleFinish "17-01-2024"^^xsd:string ;
+    :ScheduleStart "15-01-2024"^^xsd:string .
+
+:TT-MEP-GF-0090 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 8.0 ;
+    :ActualFinish "28-01-2024"^^xsd:string ;
+    :ActualStart "21-01-2024"^^xsd:string ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "23-01-2024"^^xsd:string ;
+    :ScheduleStart "20-01-2024"^^xsd:string .
+
+:TT-PRO-FN-0010 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 32.0 ;
+    :ActualFinish "21-09-2023"^^xsd:string ;
+    :ActualStart "21-08-2023"^^xsd:string ;
+    :ScheduleDuration 42.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-FN-0020 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 32.0 ;
+    :ActualFinish "21-09-2023"^^xsd:string ;
+    :ActualStart "21-08-2023"^^xsd:string ;
+    :ScheduleDuration 42.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-FN-0030 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 32.0 ;
+    :ActualFinish "21-09-2023"^^xsd:string ;
+    :ActualStart "21-08-2023"^^xsd:string ;
+    :ScheduleDuration 42.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-FN-0040 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 39.0 ;
+    :ActualFinish "05-10-2023"^^xsd:string ;
+    :ActualStart "28-08-2023"^^xsd:string ;
+    :ScheduleDuration 42.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-FN-0050 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 35.0 ;
+    :ActualFinish "27-09-2023"^^xsd:string ;
+    :ActualStart "24-08-2023"^^xsd:string ;
+    :ScheduleDuration 42.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-FN-0060 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 34.0 ;
+    :ActualFinish "25-09-2023"^^xsd:string ;
+    :ActualStart "23-08-2023"^^xsd:string ;
+    :ScheduleDuration 42.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-FN-0070 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 33.0 ;
+    :ActualFinish "23-09-2023"^^xsd:string ;
+    :ActualStart "22-08-2023"^^xsd:string ;
+    :ScheduleDuration 42.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-FN-0080 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 38.0 ;
+    :ActualFinish "03-10-2023"^^xsd:string ;
+    :ActualStart "27-08-2023"^^xsd:string ;
+    :ScheduleDuration 42.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-FN-0090 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 37.0 ;
+    :ActualFinish "01-10-2023"^^xsd:string ;
+    :ActualStart "26-08-2023"^^xsd:string ;
+    :ScheduleDuration 42.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-FN-0100 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 14.0 ;
+    :ActualFinish "10-09-2023"^^xsd:string ;
+    :ActualStart "28-08-2023"^^xsd:string ;
+    :ScheduleDuration 7.0 ;
+    :ScheduleFinish "26-08-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-MEP-0010 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 33.0 ;
+    :ActualFinish "23-09-2023"^^xsd:string ;
+    :ActualStart "22-08-2023"^^xsd:string ;
+    :ScheduleDuration 42.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-MEP-0020 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 34.0 ;
+    :ActualFinish "25-09-2023"^^xsd:string ;
+    :ActualStart "23-08-2023"^^xsd:string ;
+    :ScheduleDuration 42.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-MEP-0030 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 32.0 ;
+    :ActualFinish "21-09-2023"^^xsd:string ;
+    :ActualStart "21-08-2023"^^xsd:string ;
+    :ScheduleDuration 42.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-MEP-0040 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 32.0 ;
+    :ActualFinish "21-09-2023"^^xsd:string ;
+    :ActualStart "21-08-2023"^^xsd:string ;
+    :ScheduleDuration 42.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-MEP-0050 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 33.0 ;
+    :ActualFinish "23-09-2023"^^xsd:string ;
+    :ActualStart "22-08-2023"^^xsd:string ;
+    :ScheduleDuration 42.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-MEP-0060 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 39.0 ;
+    :ActualFinish "05-10-2023"^^xsd:string ;
+    :ActualStart "28-08-2023"^^xsd:string ;
+    :ScheduleDuration 42.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-MEP-0070 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 33.0 ;
+    :ActualFinish "23-09-2023"^^xsd:string ;
+    :ActualStart "22-08-2023"^^xsd:string ;
+    :ScheduleDuration 42.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "20-08-2023"^^xsd:string .
+
+:TT-PRO-ST-0010 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 67.0 ;
+    :ActualFinish "30-10-2023"^^xsd:string ;
+    :ActualStart "25-08-2023"^^xsd:string ;
+    :ScheduleDuration 82.0 ;
+    :ScheduleFinish "08-11-2023"^^xsd:string ;
+    :ScheduleStart "19-08-2023"^^xsd:string .
+
+:TT-PRO-ST-0020 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 64.0 ;
+    :ActualFinish "24-10-2023"^^xsd:string ;
+    :ActualStart "22-08-2023"^^xsd:string ;
+    :ScheduleDuration 82.0 ;
+    :ScheduleFinish "08-11-2023"^^xsd:string ;
+    :ScheduleStart "19-08-2023"^^xsd:string .
+
+:TT-PRO-ST-0030 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 67.0 ;
+    :ActualFinish "30-10-2023"^^xsd:string ;
+    :ActualStart "25-08-2023"^^xsd:string ;
+    :ScheduleDuration 82.0 ;
+    :ScheduleFinish "08-11-2023"^^xsd:string ;
+    :ScheduleStart "19-08-2023"^^xsd:string .
+
+:TT-PRO-ST-0040 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 14.0 ;
+    :ActualFinish "09-09-2023"^^xsd:string ;
+    :ActualStart "27-08-2023"^^xsd:string ;
+    :ScheduleDuration 5.0 ;
+    :ScheduleFinish "23-08-2023"^^xsd:string ;
+    :ScheduleStart "19-08-2023"^^xsd:string .
+
+:TT-PRO-ST-0050 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 8.0 ;
+    :ActualFinish "28-08-2023"^^xsd:string ;
+    :ActualStart "21-08-2023"^^xsd:string ;
+    :ScheduleDuration 5.0 ;
+    :ScheduleFinish "23-08-2023"^^xsd:string ;
+    :ScheduleStart "19-08-2023"^^xsd:string .
+
+:TT-PRO-ST-0060 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 7.0 ;
+    :ActualFinish "26-08-2023"^^xsd:string ;
+    :ActualStart "20-08-2023"^^xsd:string ;
+    :ScheduleDuration 5.0 ;
+    :ScheduleFinish "23-08-2023"^^xsd:string ;
+    :ScheduleStart "19-08-2023"^^xsd:string .
+
+:TT-PRO-ST-0070 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 11.0 ;
+    :ActualFinish "03-09-2023"^^xsd:string ;
+    :ActualStart "24-08-2023"^^xsd:string ;
+    :ScheduleDuration 5.0 ;
+    :ScheduleFinish "23-08-2023"^^xsd:string ;
+    :ScheduleStart "19-08-2023"^^xsd:string .
+
+:TT-PRO-ST-0080 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 6.0 ;
+    :ActualFinish "24-08-2023"^^xsd:string ;
+    :ActualStart "19-08-2023"^^xsd:string ;
+    :ScheduleDuration 5.0 ;
+    :ScheduleFinish "23-08-2023"^^xsd:string ;
+    :ScheduleStart "19-08-2023"^^xsd:string .
+
+:TT-ST-01-0010 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 2.0 ;
+    :ScheduleFinish "20-11-2023"^^xsd:string ;
+    :ScheduleStart "19-11-2023"^^xsd:string .
+
+:TT-ST-01-0020 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 6.0 ;
+    :ScheduleFinish "26-11-2023"^^xsd:string ;
+    :ScheduleStart "21-11-2023"^^xsd:string .
+
+:TT-ST-01-0030 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 1.0 ;
+    :ScheduleFinish "27-11-2023"^^xsd:string ;
+    :ScheduleStart "27-11-2023"^^xsd:string .
+
+:TT-ST-01-0040 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 9.0 ;
+    :ScheduleFinish "06-12-2023"^^xsd:string ;
+    :ScheduleStart "28-11-2023"^^xsd:string .
+
+:TT-ST-01-0050 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 2.0 ;
+    :ScheduleFinish "10-12-2023"^^xsd:string ;
+    :ScheduleStart "09-12-2023"^^xsd:string .
+
+:TT-ST-01-0060 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 7.0 ;
+    :ScheduleFinish "17-12-2023"^^xsd:string ;
+    :ScheduleStart "11-12-2023"^^xsd:string .
+
+:TT-ST-01-0070 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 3.0 ;
+    :ScheduleFinish "20-12-2023"^^xsd:string ;
+    :ScheduleStart "18-12-2023"^^xsd:string .
+
+:TT-ST-01-0080 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 1.0 ;
+    :ScheduleFinish "23-12-2023"^^xsd:string ;
+    :ScheduleStart "23-12-2023"^^xsd:string .
+
+:TT-ST-01-0090 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 9.0 ;
+    :ScheduleFinish "01-01-2024"^^xsd:string ;
+    :ScheduleStart "24-12-2023"^^xsd:string .
+
+:TT-ST-01-0100 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 1.0 ;
+    :ScheduleFinish "02-01-2024"^^xsd:string ;
+    :ScheduleStart "02-01-2024"^^xsd:string .
+
+:TT-ST-01-0110 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "06-01-2024"^^xsd:string ;
+    :ScheduleStart "03-01-2024"^^xsd:string .
+
+:TT-ST-01-0120 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 3.0 ;
+    :ScheduleFinish "09-01-2024"^^xsd:string ;
+    :ScheduleStart "07-01-2024"^^xsd:string .
+
+:TT-ST-01-0130 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 1.0 ;
+    :ScheduleFinish "10-01-2024"^^xsd:string ;
+    :ScheduleStart "10-01-2024"^^xsd:string .
+
+:TT-ST-01-0140 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 5.0 ;
+    :ScheduleFinish "17-01-2024"^^xsd:string ;
+    :ScheduleStart "13-01-2024"^^xsd:string .
+
+:TT-ST-01-0150 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 1.0 ;
+    :ScheduleFinish "20-01-2024"^^xsd:string ;
+    :ScheduleStart "20-01-2024"^^xsd:string .
+
+:TT-ST-01-0160 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 2.0 ;
+    :ScheduleFinish "22-01-2024"^^xsd:string ;
+    :ScheduleStart "21-01-2024"^^xsd:string .
+
+:TT-ST-01-0170 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 5.0 ;
+    :ScheduleFinish "27-01-2024"^^xsd:string ;
+    :ScheduleStart "23-01-2024"^^xsd:string .
+
+:TT-ST-01-0180 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 1.0 ;
+    :ScheduleFinish "28-01-2024"^^xsd:string ;
+    :ScheduleStart "28-01-2024"^^xsd:string .
+
+:TT-ST-01-0190 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 9.0 ;
+    :ScheduleFinish "06-02-2024"^^xsd:string ;
+    :ScheduleStart "29-01-2024"^^xsd:string .
+
+:TT-ST-01-0200 a :TaskTime,
+        owl:NamedIndividual ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "10-02-2024"^^xsd:string ;
+    :ScheduleStart "07-02-2024"^^xsd:string .
+
+:TT-ST-FL-0010 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 8.0 ;
+    :ActualFinish "28-08-2023"^^xsd:string ;
+    :ActualStart "21-08-2023"^^xsd:string ;
+    :ScheduleDuration 5.0 ;
+    :ScheduleFinish "23-08-2023"^^xsd:string ;
+    :ScheduleStart "19-08-2023"^^xsd:string .
+
+:TT-ST-FL-0020 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 11.0 ;
+    :ActualFinish "12-08-2023"^^xsd:string ;
+    :ActualStart "02-08-2023"^^xsd:string ;
+    :ScheduleDuration 3.0 ;
+    :ScheduleFinish "01-08-2023"^^xsd:string ;
+    :ScheduleStart "30-07-2023"^^xsd:string .
+
+:TT-ST-FL-0030 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 9.0 ;
+    :ActualFinish "14-08-2023"^^xsd:string ;
+    :ActualStart "06-08-2023"^^xsd:string ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "05-08-2023"^^xsd:string ;
+    :ScheduleStart "02-08-2023"^^xsd:string .
+
+:TT-ST-FL-0040 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 13.0 ;
+    :ActualFinish "22-08-2023"^^xsd:string ;
+    :ActualStart "10-08-2023"^^xsd:string ;
+    :ScheduleDuration 14.0 ;
+    :ScheduleFinish "19-08-2023"^^xsd:string ;
+    :ScheduleStart "06-08-2023"^^xsd:string .
+
+:TT-ST-GF-0010 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 5.0 ;
+    :ActualFinish "02-09-2023"^^xsd:string ;
+    :ActualStart "29-08-2023"^^xsd:string ;
+    :ScheduleDuration 2.0 ;
+    :ScheduleFinish "28-08-2023"^^xsd:string ;
+    :ScheduleStart "27-08-2023"^^xsd:string .
+
+:TT-ST-GF-0020 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 8.0 ;
+    :ActualFinish "10-09-2023"^^xsd:string ;
+    :ActualStart "03-09-2023"^^xsd:string ;
+    :ScheduleDuration 6.0 ;
+    :ScheduleFinish "03-09-2023"^^xsd:string ;
+    :ScheduleStart "29-08-2023"^^xsd:string .
+
+:TT-ST-GF-0030 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 6.0 ;
+    :ActualFinish "13-09-2023"^^xsd:string ;
+    :ActualStart "08-09-2023"^^xsd:string ;
+    :ScheduleDuration 1.0 ;
+    :ScheduleFinish "04-09-2023"^^xsd:string ;
+    :ScheduleStart "04-09-2023"^^xsd:string .
+
+:TT-ST-GF-0040 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 13.0 ;
+    :ActualFinish "22-09-2023"^^xsd:string ;
+    :ActualStart "10-09-2023"^^xsd:string ;
+    :ScheduleDuration 9.0 ;
+    :ScheduleFinish "13-09-2023"^^xsd:string ;
+    :ScheduleStart "05-09-2023"^^xsd:string .
+
+:TT-ST-GF-0050 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 1.0 ;
+    :ActualFinish "20-09-2023"^^xsd:string ;
+    :ActualStart "20-09-2023"^^xsd:string ;
+    :ScheduleDuration 2.0 ;
+    :ScheduleFinish "17-09-2023"^^xsd:string ;
+    :ScheduleStart "16-09-2023"^^xsd:string .
+
+:TT-ST-GF-0060 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 8.0 ;
+    :ActualFinish "25-09-2023"^^xsd:string ;
+    :ActualStart "18-09-2023"^^xsd:string ;
+    :ScheduleDuration 7.0 ;
+    :ScheduleFinish "24-09-2023"^^xsd:string ;
+    :ScheduleStart "18-09-2023"^^xsd:string .
+
+:TT-ST-GF-0070 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 11.0 ;
+    :ActualFinish "08-10-2023"^^xsd:string ;
+    :ActualStart "28-09-2023"^^xsd:string ;
+    :ScheduleDuration 3.0 ;
+    :ScheduleFinish "27-09-2023"^^xsd:string ;
+    :ScheduleStart "25-09-2023"^^xsd:string .
+
+:TT-ST-GF-0080 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 1.0 ;
+    :ActualFinish "04-10-2023"^^xsd:string ;
+    :ActualStart "04-10-2023"^^xsd:string ;
+    :ScheduleDuration 1.0 ;
+    :ScheduleFinish "30-09-2023"^^xsd:string ;
+    :ScheduleStart "30-09-2023"^^xsd:string .
+
+:TT-ST-GF-0090 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 7.0 ;
+    :ActualFinish "10-10-2023"^^xsd:string ;
+    :ActualStart "04-10-2023"^^xsd:string ;
+    :ScheduleDuration 9.0 ;
+    :ScheduleFinish "09-10-2023"^^xsd:string ;
+    :ScheduleStart "01-10-2023"^^xsd:string .
+
+:TT-ST-GF-0100 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 8.0 ;
+    :ActualFinish "17-10-2023"^^xsd:string ;
+    :ActualStart "10-10-2023"^^xsd:string ;
+    :ScheduleDuration 1.0 ;
+    :ScheduleFinish "10-10-2023"^^xsd:string ;
+    :ScheduleStart "10-10-2023"^^xsd:string .
+
+:TT-ST-GF-0110 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 2.0 ;
+    :ActualFinish "15-10-2023"^^xsd:string ;
+    :ActualStart "14-10-2023"^^xsd:string ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "14-10-2023"^^xsd:string ;
+    :ScheduleStart "11-10-2023"^^xsd:string .
+
+:TT-ST-GF-0120 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 14.0 ;
+    :ActualFinish "28-10-2023"^^xsd:string ;
+    :ActualStart "15-10-2023"^^xsd:string ;
+    :ScheduleDuration 3.0 ;
+    :ScheduleFinish "17-10-2023"^^xsd:string ;
+    :ScheduleStart "15-10-2023"^^xsd:string .
+
+:TT-ST-GF-0130 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 3.0 ;
+    :ActualFinish "23-10-2023"^^xsd:string ;
+    :ActualStart "21-10-2023"^^xsd:string ;
+    :ScheduleDuration 1.0 ;
+    :ScheduleFinish "18-10-2023"^^xsd:string ;
+    :ScheduleStart "18-10-2023"^^xsd:string .
+
+:TT-ST-GF-0140 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 5.0 ;
+    :ActualFinish "26-10-2023"^^xsd:string ;
+    :ActualStart "22-10-2023"^^xsd:string ;
+    :ScheduleDuration 5.0 ;
+    :ScheduleFinish "25-10-2023"^^xsd:string ;
+    :ScheduleStart "21-10-2023"^^xsd:string .
+
+:TT-ST-GF-0150 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 5.0 ;
+    :ActualFinish "02-11-2023"^^xsd:string ;
+    :ActualStart "29-10-2023"^^xsd:string ;
+    :ScheduleDuration 1.0 ;
+    :ScheduleFinish "28-10-2023"^^xsd:string ;
+    :ScheduleStart "28-10-2023"^^xsd:string .
+
+:TT-ST-GF-0160 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 6.0 ;
+    :ActualFinish "08-11-2023"^^xsd:string ;
+    :ActualStart "03-11-2023"^^xsd:string ;
+    :ScheduleDuration 2.0 ;
+    :ScheduleFinish "30-10-2023"^^xsd:string ;
+    :ScheduleStart "29-10-2023"^^xsd:string .
+
+:TT-ST-GF-0170 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 3.0 ;
+    :ActualFinish "07-11-2023"^^xsd:string ;
+    :ActualStart "05-11-2023"^^xsd:string ;
+    :ScheduleDuration 5.0 ;
+    :ScheduleFinish "04-11-2023"^^xsd:string ;
+    :ScheduleStart "31-10-2023"^^xsd:string .
+
+:TT-ST-GF-0180 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 1.0 ;
+    :ActualFinish "10-11-2023"^^xsd:string ;
+    :ActualStart "10-11-2023"^^xsd:string ;
+    :ScheduleDuration 1.0 ;
+    :ScheduleFinish "05-11-2023"^^xsd:string ;
+    :ScheduleStart "05-11-2023"^^xsd:string .
+
+:TT-ST-GF-0190 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 16.0 ;
+    :ActualFinish "23-11-2023"^^xsd:string ;
+    :ActualStart "08-11-2023"^^xsd:string ;
+    :ScheduleDuration 9.0 ;
+    :ScheduleFinish "14-11-2023"^^xsd:string ;
+    :ScheduleStart "06-11-2023"^^xsd:string .
+
+:TT-ST-GF-0200 a :TaskTime,
+        owl:NamedIndividual ;
+    :ActualDuration 3.0 ;
+    :ActualFinish "19-11-2023"^^xsd:string ;
+    :ActualStart "17-11-2023"^^xsd:string ;
+    :ScheduleDuration 4.0 ;
+    :ScheduleFinish "18-11-2023"^^xsd:string ;
+    :ScheduleStart "15-11-2023"^^xsd:string .
+
+:TaskCategory a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:TaskDurationEnum a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:TaskSequenceEnum a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:TrackingTag a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Units a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:WB-01-FN-0020 a :WBS,
+        owl:NamedIndividual ;
+    :hasTask :TA-FN-01-0010,
+        :TA-FN-01-0020,
+        :TA-FN-01-0030,
+        :TA-FN-01-0040,
+        :TA-FN-01-0050,
+        :TA-FN-01-0060,
+        :TA-FN-01-0070,
+        :TA-FN-01-0080,
+        :TA-FN-01-0090,
+        :TA-FN-01-0100,
+        :TA-FN-01-0110,
+        :TA-FN-01-0120,
+        :TA-FN-01-0130,
+        :TA-FN-01-0140 .
+
+:WB-01-MEP-0030 a :WBS,
+        owl:NamedIndividual ;
+    :hasTask :TA-MEP-01-0010,
+        :TA-MEP-01-0020,
+        :TA-MEP-01-0030,
+        :TA-MEP-01-0040,
+        :TA-MEP-01-0050,
+        :TA-MEP-01-0060,
+        :TA-MEP-01-0070,
+        :TA-MEP-01-0080,
+        :TA-MEP-01-0090 .
+
+:WB-01-ST-0010 a :WBS,
+        owl:NamedIndividual ;
+    :hasTask :TA-ST-01-0010,
+        :TA-ST-01-0020,
+        :TA-ST-01-0030,
+        :TA-ST-01-0040,
+        :TA-ST-01-0050,
+        :TA-ST-01-0060,
+        :TA-ST-01-0070,
+        :TA-ST-01-0080,
+        :TA-ST-01-0090,
+        :TA-ST-01-0100,
+        :TA-ST-01-0110,
+        :TA-ST-01-0120,
+        :TA-ST-01-0130,
+        :TA-ST-01-0140,
+        :TA-ST-01-0150,
+        :TA-ST-01-0160,
+        :TA-ST-01-0170,
+        :TA-ST-01-0180,
+        :TA-ST-01-0190,
+        :TA-ST-01-0200 .
+
+:WB-CON-SB-0010 a :WBS,
+        owl:NamedIndividual .
+
+:WB-CON-SP-0020 a :WBS,
+        owl:NamedIndividual .
+
+:WB-DB-CON-0040 a :WBS,
+        owl:NamedIndividual .
+
+:WB-DB-ENG-0020 a :WBS,
+        owl:NamedIndividual ;
+    :hasTask :TA-ENG-DR-0010,
+        :TA-ENG-DR-0020,
+        :TA-ENG-DR-0030,
+        :TA-ENG-DR-0040 .
+
+:WB-DB-GEN-0010 a :WBS,
+        owl:NamedIndividual ;
+    :hasTask :TA-GEN-ML-0010,
+        :TA-GEN-ML-0020,
+        :TA-GEN-ML-0030,
+        :TA-GEN-ML-0040,
+        :TA-GEN-ML-0050,
+        :TA-GEN-ML-0060 .
+
+:WB-DB-HAN-0050 a :WBS,
+        owl:NamedIndividual .
+
+:WB-DB-PRO-0030 a :WBS,
+        owl:NamedIndividual .
+
+:WB-FL-MEP-0020 a :WBS,
+        owl:NamedIndividual ;
+    :hasTask :TA-MEP-FL-0040 .
+
+:WB-FL-ST-0010 a :WBS,
+        owl:NamedIndividual ;
+    :hasTask :TA-ST-FL-0010,
+        :TA-ST-FL-0020,
+        :TA-ST-FL-0030,
+        :TA-ST-FL-0040 .
+
+:WB-GF-FN-0020 a :WBS,
+        owl:NamedIndividual ;
+    :hasTask :TA-FN-GF-0010,
+        :TA-FN-GF-0020,
+        :TA-FN-GF-0030,
+        :TA-FN-GF-0040,
+        :TA-FN-GF-0050,
+        :TA-FN-GF-0060,
+        :TA-FN-GF-0070,
+        :TA-FN-GF-0080,
+        :TA-FN-GF-0090,
+        :TA-FN-GF-0100,
+        :TA-FN-GF-0110,
+        :TA-FN-GF-0120,
+        :TA-FN-GF-0130,
+        :TA-FN-GF-0140 .
+
+:WB-GF-MEP-0030 a :WBS,
+        owl:NamedIndividual ;
+    :hasTask :TA-MEP-GF-0010,
+        :TA-MEP-GF-0020,
+        :TA-MEP-GF-0030,
+        :TA-MEP-GF-0040,
+        :TA-MEP-GF-0050,
+        :TA-MEP-GF-0060,
+        :TA-MEP-GF-0070,
+        :TA-MEP-GF-0080,
+        :TA-MEP-GF-0090 .
+
+:WB-GF-ST-0010 a :WBS,
+        owl:NamedIndividual ;
+    :hasTask :TA-ST-GF-0010,
+        :TA-ST-GF-0020,
+        :TA-ST-GF-0030,
+        :TA-ST-GF-0040,
+        :TA-ST-GF-0050,
+        :TA-ST-GF-0060,
+        :TA-ST-GF-0070,
+        :TA-ST-GF-0080,
+        :TA-ST-GF-0090,
+        :TA-ST-GF-0100,
+        :TA-ST-GF-0110,
+        :TA-ST-GF-0120,
+        :TA-ST-GF-0130,
+        :TA-ST-GF-0140,
+        :TA-ST-GF-0150,
+        :TA-ST-GF-0160,
+        :TA-ST-GF-0170,
+        :TA-ST-GF-0180,
+        :TA-ST-GF-0190,
+        :TA-ST-GF-0200 .
+
+:WB-PRO-FN-0030 a :WBS,
+        owl:NamedIndividual ;
+    :hasTask :TA-PRO-FN-0010,
+        :TA-PRO-FN-0020,
+        :TA-PRO-FN-0030,
+        :TA-PRO-FN-0040,
+        :TA-PRO-FN-0050,
+        :TA-PRO-FN-0060,
+        :TA-PRO-FN-0070,
+        :TA-PRO-FN-0080,
+        :TA-PRO-FN-0090,
+        :TA-PRO-FN-0100 .
+
+:WB-PRO-MEP-0020 a :WBS,
+        owl:NamedIndividual ;
+    :hasTask :TA-PRO-MEP-0010,
+        :TA-PRO-MEP-0020,
+        :TA-PRO-MEP-0030,
+        :TA-PRO-MEP-0040,
+        :TA-PRO-MEP-0050,
+        :TA-PRO-MEP-0060,
+        :TA-PRO-MEP-0070 .
+
+:WB-PRO-ST-0010 a :WBS,
+        owl:NamedIndividual ;
+    :hasTask :TA-PRO-ST-0010,
+        :TA-PRO-ST-0020,
+        :TA-PRO-ST-0030,
+        :TA-PRO-ST-0040,
+        :TA-PRO-ST-0050,
+        :TA-PRO-ST-0060,
+        :TA-PRO-ST-0070,
+        :TA-PRO-ST-0080 .
+
+:WB-SB-FL-0010 a :WBS,
+        owl:NamedIndividual .
+
+:WB-SP-01-0020 a :WBS,
+        owl:NamedIndividual .
+
+:WB-SP-02-0030 a :WBS,
+        owl:NamedIndividual .
+
+:WB-SP-GF-0010 a :WBS,
+        owl:NamedIndividual .
+
+:WBSCategory a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:WP-RES-GEN-0010 a :WorkPackage,
+        owl:NamedIndividual ;
+    :hasWBS :WB-01-FN-0020,
+        :WB-01-MEP-0030,
+        :WB-01-ST-0010,
+        :WB-CON-SB-0010,
+        :WB-CON-SP-0020,
+        :WB-DB-CON-0040,
+        :WB-DB-ENG-0020,
+        :WB-DB-GEN-0010,
+        :WB-DB-HAN-0050,
+        :WB-DB-PRO-0030,
+        :WB-FL-MEP-0020,
+        :WB-FL-ST-0010,
+        :WB-GF-FN-0020,
+        :WB-GF-MEP-0030,
+        :WB-GF-ST-0010,
+        :WB-PRO-FN-0030,
+        :WB-PRO-MEP-0020,
+        :WB-PRO-ST-0010,
+        :WB-SB-FL-0010,
+        :WB-SP-01-0020,
+        :WB-SP-02-0030,
+        :WB-SP-GF-0010 .
+
+:WorkPackageCategory a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Brick a owl:Class ;
+    rdfs:subClassOf :MaterialResource .
+
+:CeramicTiles a owl:Class ;
+    rdfs:subClassOf :MaterialResource .
+
+:ResourceType a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Constraints a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Mason a owl:Class ;
+    rdfs:subClassOf :LaborResource .
+
+:TaskRelSequence a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:WorkStatus a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:ConstructionResource a owl:Class ;
+    rdfs:subClassOf :ResourceType .
+
+:EquipmentResource a owl:Class ;
+    rdfs:subClassOf :ConstructionResource .
+
+:Paint a owl:Class ;
+    rdfs:subClassOf :MaterialResource .
+
+:LaborResource a owl:Class ;
+    rdfs:subClassOf :ConstructionResource .
+
+:Steel a owl:Class ;
+    rdfs:subClassOf :MaterialResource .
+
+:CostType a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:BindingWire a owl:Class ;
+    rdfs:subClassOf :MaterialResource .
+
+:Concrete a owl:Class ;
+    rdfs:subClassOf :MaterialResource .
+
+:ConcreteMixers a owl:Class ;
+    rdfs:subClassOf :EquipmentResource .
+
+:ConcretePump a owl:Class ;
+    rdfs:subClassOf :EquipmentResource .
+
+:ConcreteVibrator a owl:Class ;
+    rdfs:subClassOf :EquipmentResource .
+
+:FormWork a owl:Class ;
+    rdfs:subClassOf :MaterialResource .
+
+:Ironworker a owl:Class ;
+    rdfs:subClassOf :LaborResource .
+
+:MaterialResource a owl:Class ;
+    rdfs:subClassOf :ConstructionResource .
+
+:Electrician a owl:Class ;
+    rdfs:subClassOf :LaborResource .
+
+:Plumber a owl:Class ;
+    rdfs:subClassOf :LaborResource .
+
+:WorkPackage a owl:Class ;
+    rdfs:subClassOf :Project .
+
+:Project a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Resource a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Carpenter a owl:Class ;
+    rdfs:subClassOf :LaborResource .
+
+:COMPLETED a :WorkStatus,
+        owl:NamedIndividual .
+
+:STARTED a :WorkStatus,
+        owl:NamedIndividual .
+
+:NOTSTARTED a :WorkStatus,
+        owl:NamedIndividual .
+
+:WBS a owl:Class ;
+    rdfs:subClassOf :WorkPackage .
+
+:Helper a owl:Class ;
+    rdfs:subClassOf :LaborResource .
+
+:Equipment a :CostType,
+        owl:NamedIndividual .
+
+:Labor a :CostType,
+        owl:NamedIndividual .
+
+:Material a :CostType,
+        owl:NamedIndividual .
+
+:TaskTime a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
+:Task a owl:Class ;
+    rdfs:subClassOf :WBS .
+
+:CostItem a owl:Class ;
+    rdfs:subClassOf owl:Thing .
+
