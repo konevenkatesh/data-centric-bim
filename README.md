@@ -455,13 +455,13 @@ This work is part of ongoing research in datacentric approaches to Building Info
 
 ## License
 
-[Specify License]
+[CC BY 4.0 (Creative Commons Attribution 4.0 International)]
 
 ---
 
 ## Contact
 
-[Specify Contact Information]
+[[Kone Venkatesh](https://www.linkedin.com/in/venkatesh-kone-66149a13b/)]
 
 ---
 
@@ -473,5 +473,6 @@ This work is part of ongoing research in datacentric approaches to Building Info
 - Open BIM research community
 
 ---
+
 
 **Note**: This is an active research project. Features, structure, and methodology are subject to change as the research progresses.
